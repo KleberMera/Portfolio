@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  background-color: hsla(172.99999999999994, 0%, 100%, 1);
+  background-image: radial-gradient(
+      circle at 1% 2%,
+      hsla(209.26829268292684, 100%, 8%, 1) 7%,
+      transparent 84%
+    ),
+    radial-gradient(
+      circle at 95% 96%,
+      hsla(204.11764705882356, 83%, 17%, 1) 7%,
+      transparent 84%
+    ),
+    radial-gradient(
+      circle at 2% 98%,
+      hsla(210.00000000000017, 63%, 25%, 1) 7%,
+      transparent 84%
+    );
+  background-blend-mode: normal, normal, normal;
+  height: 100vh;
+}
