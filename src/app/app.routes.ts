@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'portafolio',
-    loadChildren: () => import('./portafolio/portfolio.routes'),
+    loadChildren: () => import('./components/shared/portfolio.routes'),
   },
   {
     path: '',
