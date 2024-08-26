@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.scss'
 })
 export default class HeroComponent {
-
+  ngAfterViewInit() {
+    lucide.createIcons();
+ }
 }

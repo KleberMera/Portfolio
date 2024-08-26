@@ -1,17 +1,30 @@
 <header class="header">
-  <div class="container">
-     <div class="header-content">
-        <a routerLink="/" class="logo">KapmDev</a>
-        <nav class="nav-desktop">
-           <a routerLink="/home" class="nav-link">Home</a>
-           <a routerLink="/about" class="nav-link">Sobre Mí</a>
-           <a routerLink="/experience" class="nav-link">Experiencia</a>
-           <a routerLink="/education" class="nav-link">Educación</a>
-           <a routerLink="/skills" class="nav-link">Habilidades</a>
-           <a routerLink="/projects" class="nav-link">Proyectos</a>
-        </nav>
-       
-     </div>
-  </div>
-</header>
+   <div class="container">
+       <div class="header-content">
+           <a href="#" class="logo">KapmDev</a>
+           <nav class="nav-desktop">
+               <a href="#home" class="nav-link">Home</a>
+               <a href="#about" class="nav-link">Sobre Mí</a>
+               <a href="#experience" class="nav-link">Experiencia</a>
+               <a href="#education" class="nav-link">Educación</a>
+               <a href="#skills" class="nav-link">Habilidades</a>
+               <a href="#projects" class="nav-link">Proyectos</a>
+           </nav>
+           <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+               <i data-lucide="menu"></i>
+           </button>
+       </div>
+   </div>
 
+   <nav id="mobile-nav" class="nav-mobile">
+       <button id="close-menu" class="close-menu" aria-label="Cerrar menú">
+           <i data-lucide="x"></i>
+       </button>
+       <a href="#home" class="nav-link">Home</a>
+       <a href="#about" class="nav-link">Sobre Mí</a>
+       <a href="#experience" class="nav-link">Experiencia</a>
+       <a href="#education" class="nav-link">Educación</a>
+       <a href="#skills" class="nav-link">Habilidades</a>
+       <a href="#projects" class="nav-link">Proyectos</a>
+   </nav>
+</header>

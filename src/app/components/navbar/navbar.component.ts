@@ -11,9 +11,20 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
 
-  isMenuOpen = false;
+  ngAfterViewInit() {
+    lucide.createIcons();
 
-  toggleMenu(): void {
-     this.isMenuOpen = !this.isMenuOpen;
-  }
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const closeMenu = document.getElementById('close-menu');
+
+    menuToggle?.addEventListener('click', () => {
+        mobileNav?.classList.add('show');
+    });
+
+    closeMenu?.addEventListener('click', () => {
+        mobileNav?.classList.remove('show');
+    });
+}
+
 }
