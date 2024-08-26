@@ -1,14 +1,16 @@
-<section class="skills">
-    <div class="container">
-       <h2 class="skills-title">Habilidades</h2>
-       <div class="skills-content">
-          <div class="skill" *ngFor="let skill of skills">
-             <h3 class="skill-name">{{ skill.name }}</h3>
-             <div class="skill-bar">
-                <div class="skill-level" [ngStyle]="{ 'width': skill.level + '%' }"></div>
-             </div>
-          </div>
-       </div>
+<section id="skills" class="section bg-alt">
+  <div class="container">
+    <h2>Habilidades</h2>
+    <div class="skills-grid">
+      <div *ngFor="let skill of skills" class="skill-item">
+        <div class="skill-info">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-level"> {{ skill.level }}%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" [style.width.%]="skill.level"></div>
+        </div>
+      </div>
     </div>
- </section>
- 
+  </div>
+</section>
