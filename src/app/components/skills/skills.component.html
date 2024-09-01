@@ -1,16 +1,38 @@
-<section id="skills" class="section bg-alt">
-  <div class="container">
-    <h2>Habilidades</h2>
-    <div class="skills-grid">
-      <div *ngFor="let skill of skills" class="skill-item">
-        <div class="skill-info">
-          <span class="skill-name">{{ skill.name }}</span>
-          <span class="skill-level"> {{ skill.level }}%</span>
+  <!-- Skills -->
+  <section id="skills" class="mb-12">
+    <h2 class="text-2xl font-semibold text-blue-400 mb-6">Habilidades Técnicas</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-blue-400 mb-4">Lenguajes de Programación</h3>
+        <div class="space-y-4">
+          <ng-container *ngFor="let skill of programmingSkills">
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-medium text-gray-300">{{ skill.name }}</span>
+                <span class="text-sm font-medium text-gray-400">{{ skill.percentage }}%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-2.5">
+                <div class="bg-blue-600 h-2.5 rounded-full" [style.width]="skill.percentage + '%'"></div>
+              </div>
+            </div>
+          </ng-container>
         </div>
-        <div class="skill-bar">
-          <div class="skill-progress" [style.width.%]="skill.level"></div>
+      </div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-blue-400 mb-4">Frameworks y Tecnologías</h3>
+        <div class="space-y-4">
+          <ng-container *ngFor="let skill of frameworkSkills">
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-medium text-gray-300">{{ skill.name }}</span>
+                <span class="text-sm font-medium text-gray-400">{{ skill.percentage }}%</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-2.5">
+                <div class="bg-green-600 h-2.5 rounded-full" [style.width]="skill.percentage + '%'"></div>
+              </div>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>

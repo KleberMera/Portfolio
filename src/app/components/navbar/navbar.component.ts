@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,21 +10,26 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+  @ViewChild('sidebar') sidebar!: ElementRef;
 
-  ngAfterViewInit() {
-    lucide.createIcons();
+  navLinks = [
+    { id: 'home', name: 'Home' },
+    { id: 'about', name: 'Sobre mí' },
+    { id: 'skills', name: 'Habilidades' },
+    { id: 'projects', name: 'Proyectos' },
+    { id: 'education', name: 'Educación' },
+    { id: 'contact', name: 'Contacto' }
+  ];
 
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    const closeMenu = document.getElementById('close-menu');
 
-    menuToggle?.addEventListener('click', () => {
-        mobileNav?.classList.add('show');
-    });
+  scrollToSection(sectionId: string): void {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
-    closeMenu?.addEventListener('click', () => {
-        mobileNav?.classList.remove('show');
-    });
-}
-
+  toggleSidebar(): void {
+    this.sidebar.nativeElement.classList.toggle('translate-x-full');
+  }
 }

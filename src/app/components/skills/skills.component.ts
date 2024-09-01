@@ -12,12 +12,19 @@ interface Skill {
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
-  skills: Skill[] = [
-    { name: 'Angular', level: 90 },
-    { name: 'Laravel', level: 85 },
-    { name: 'TypeScript', level: 95 },
-    { name: 'Java', level: 75 },
-    { name: 'SQL', level: 70 },
-    { name: 'HTML', level: 60 },
+  frameworkSkills = [
+    { name: 'Angular', percentage: 90 },
+    { name: 'Laravel', percentage: 85 },
+    { name: 'Ionic', percentage: 80 },
+    { name: 'SQL', percentage: 75 },
+    { name: 'Git', percentage: 90 },
+  ];
+
+  programmingSkills = [
+    { name: 'TypeScript', percentage: 90 },
+    { name: 'Java', percentage: 85 },
+    { name: 'C++', percentage: 60 },
+    { name: 'Python', percentage: 75 },
+    { name: 'JavaScript', percentage: 80 },
   ];
 }
