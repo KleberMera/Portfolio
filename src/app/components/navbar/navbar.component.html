@@ -2,8 +2,8 @@
   <div class="container">
     <nav class="py-4 px-6 flex justify-between items-center sticky top-0 z-10">
       <span class="text-xl font-bold text-blue-400">KapmDev</span>
-      <div class="hidden md:flex space-x-4">
-        <ng-container *ngFor="let link of navLinks">
+      <div class="hidden md:flex space-x-4 ">
+        <ng-container *ngFor="let link of navLinks" class="nav-link">
           <button
             (click)="scrollToSection(link.id)"
             class="text-gray-300 hover:text-white nav-link"

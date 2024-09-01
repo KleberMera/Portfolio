@@ -23,8 +23,8 @@ export class SkillsComponent {
   programmingSkills = [
     { name: 'TypeScript', percentage: 90 },
     { name: 'Java', percentage: 85 },
-    { name: 'C++', percentage: 60 },
+    { name: 'PHP', percentage: 80 },
     { name: 'Python', percentage: 75 },
-    { name: 'JavaScript', percentage: 80 },
+    { name: 'C++', percentage: 40 },
   ];
 }
