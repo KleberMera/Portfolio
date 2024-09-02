@@ -1,12 +1,12 @@
-<header class="header">
-  <div class="container">
+<header class="fixed top-0 left-0 right-0 z-10 bg-gray-800 shadow-md shadow-blue-900/50">
+  <div class="max-w-screen-2xl">
     <nav class="py-4 px-6 flex justify-between items-center sticky top-0 z-10">
       <span class="text-xl font-bold text-blue-400">KapmDev</span>
       <div class="hidden md:flex space-x-4 ">
-        <ng-container *ngFor="let link of navLinks" class="nav-link">
+        <ng-container *ngFor="let link of navLinks">
           <button
             (click)="scrollToSection(link.id)"
-            class="text-gray-300 hover:text-white nav-link"
+            class="px-4 py-2 text-gray-300 no-underline  hover:text-blue-400"
           >
             {{ link.name }}
           </button>
