@@ -1,0 +1,55 @@
+:host {
+    display: block;
+  }
+  
+  .text-blue-300 {
+    color: #93C5FD;
+  }
+  
+  .text-blue-400 {
+    color: #60A5FA;
+  }
+  
+  .text-blue-500 {
+    color: #3B82F6;
+  }
+  
+  .bg-gray-600 {
+    background-color: #4B5563;
+  }
+  
+  .bg-gray-700 {
+    background-color: #374151;
+  }
+  
+  .bg-gray-800 {
+    background-color: #1F2937;
+  }
+  
+  .bg-gray-900 {
+    background-color: #111827;
+  }
+  
+  .bg-blue-600 {
+    background-color: #2563EB;
+  }
+  
+  .bg-blue-700 {
+    background-color: #1D4ED8;
+  }
+  
+  .hover\:bg-gray-600:hover {
+    background-color: #4B5563;
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #1D4ED8;
+  }
+  
+  .focus\:ring-gray-500:focus {
+    --tw-ring-color: #6B7280;
+  }
+  
+  .focus\:ring-blue-500:focus {
+    --tw-ring-color: #3B82F6;
+  }
