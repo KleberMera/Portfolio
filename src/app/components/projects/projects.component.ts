@@ -48,8 +48,8 @@ export class ProjectsComponent {
         "Backend: Firebase"
       ],
       image: "https://via.placeholder.com/400x200",
-      github: "https://github.com/yourusername/moniwise",
-      live: "https://moniwise.com"
+      github: "https://github.com/KleberMera/MoniWiseApp",
+      live: "https://moni-wise-app.vercel.app/login"
     },
     {
       title: "Aguapen App",
@@ -60,8 +60,8 @@ export class ProjectsComponent {
         "Backend: Laravel + MySQL"
       ],
       image: "https://via.placeholder.com/400x200",
-      github: "https://github.com/yourusername/aguapen",
-      live: "https://aguapen.com"
+      github: "https://github.com/KleberMera/AguaPen",
+      live: "https://aguapen.vercel.app"
     }
   ];
 
