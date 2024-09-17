@@ -47,7 +47,7 @@ export class ProjectsComponent {
         "Frontend: Angular + Ionic",
         "Backend: Firebase"
       ],
-      image: "https://via.placeholder.com/400x200",
+      image: "assets/img/moniwise.png",
       github: "https://github.com/KleberMera/MoniWiseApp",
       live: "https://moni-wise-app.vercel.app/login"
     },
@@ -59,7 +59,7 @@ export class ProjectsComponent {
         "Frontend: Angular",
         "Backend: Laravel + MySQL"
       ],
-      image: "https://via.placeholder.com/400x200",
+      image: "assets/img/aguapen.png",
       github: "https://github.com/KleberMera/AguaPen",
       live: "https://aguapen.vercel.app"
     }
