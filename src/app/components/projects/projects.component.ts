@@ -53,7 +53,7 @@ export class ProjectsComponent {
     },
     {
       title: "Aguapen App",
-      description: "Aplicación Web para control de inventario.",
+      description: "Aplicación Web para control de la empresa en el Area de Seguridad Industrial.",
       details: [
         "Creé un sistema para la empresa Aguapen EP.",
         "Frontend: Angular",
