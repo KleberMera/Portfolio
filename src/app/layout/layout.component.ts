@@ -10,6 +10,7 @@ import { ProjectsComponent } from '../components/projects/projects.component';
 import { EducationComponent } from '../components/education/education.component';
 import { ExperienceComponent } from '../components/experience/experience.component';
 import HeroComponent from '../components/hero/hero.component';
+import { ContactComponent } from '../components/contact/contact.component';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,8 @@ import HeroComponent from '../components/hero/hero.component';
     FooterComponent,
     ProjectsComponent,
     EducationComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    ContactComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',

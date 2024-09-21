@@ -1,12 +1,22 @@
-<header class="fixed top-0 left-0 right-0 z-10 bg-gray-800 shadow-md shadow-blue-900/50">
+<header
+  class="fixed top-0 left-0 right-0 z-10 bg-gray-800 shadow-md shadow-blue-900/50"
+>
   <div class="max-w-screen-2xl">
     <nav class="py-4 px-6 flex justify-between items-center sticky top-0 z-10">
       <span class="text-xl font-bold text-blue-400">KapmDev</span>
-      <div class="hidden md:flex space-x-4 ">
+      <div class="hidden md:flex space-x-4">
+        <button title="Traducir">
+          <i
+            data-lucide="languages"
+            class="text-gray-300 no-underline hover:text-blue-400"
+          >
+          </i>
+        </button>
+
         <ng-container *ngFor="let link of navLinks">
           <button
             (click)="scrollToSection(link.id)"
-            class="px-4 py-2 text-gray-300 no-underline  hover:text-blue-400"
+            class="px-4 py-2 text-gray-300 no-underline hover:text-blue-400"
           >
             {{ link.name }}
           </button>
@@ -56,6 +66,13 @@
           d="M6 18L18 6M6 6l12 12"
         />
       </svg>
+    </button>
+    <button title="Traducir">
+      <i
+        data-lucide="languages"
+        class="text-gray-300 no-underline hover:text-blue-400"
+      >
+      </i>
     </button>
     <nav class="flex flex-col space-y-4 mt-8">
       <ng-container *ngFor="let link of navLinks">
