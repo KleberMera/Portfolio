@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent {
   contactForm: FormGroup;
+  email : string = "klebermera2016@gmail.com";
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({

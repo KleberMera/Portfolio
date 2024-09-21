@@ -1,86 +1,121 @@
 <section id="contact" class="py-[90px] bg-gray-900">
-    <div class="container mx-auto px-4">
-      <h2 @fadeInUp class="text-3xl font-bold text-blue-500 text-center mb-12">Contacto</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
-          <h3 class="text-xl font-semibold text-blue-400 mb-4">Envíame un mensaje</h3>
-          <form formGroup="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">
-                Nombre
-              </label>
-              <input
-                id="name"
-                formControlName="name"
-                required
-                class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
-              />
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">
-                Correo Electrónico
-              </label>
-              <input
-                id="email"
-                type="email"
-                formControlName="email"
-                required
-                class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
-              />
-            </div>
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">
-                Mensaje
-              </label>
-              <textarea
-                id="message"
-                formControlName="message"
-                required
-                class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
-                rows="4"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              [disabled]="!contactForm.valid"
-              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex items-center justify-center"
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-semibold text-blue-400 mb-6 text-center">
+      Contacto
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-blue-400 mb-4">
+          Envíame un mensaje
+        </h3>
+        <form formGroup="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-300 mb-1"
             >
-              Enviar Mensaje
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </form>
-        </div>
-        <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
-          <h3 class="text-xl font-semibold text-blue-400 mb-4">Información de Contacto</h3>
-          <div class="space-y-4 text-gray-300">
-            <p>
-              <strong class="text-blue-400">Email:</strong> 
-            </p>
-            <p>
-              <strong class="text-blue-400">Teléfono:</strong> +1 234 567 890
-            </p>
-            <p>
-              <strong class="text-blue-400">Dirección:</strong> Calle Ejemplo 123, Ciudad, País
-            </p>
-            <div>
-              <strong class="text-blue-400 block mb-2">Redes Sociales:</strong>
-              <div class="flex space-x-4">
-                <a href="#" class="text-gray-300 hover:text-blue-400">
-                  LinkedIn
-                </a>
-                <a href="#" class="text-gray-300 hover:text-blue-400">
-                  GitHub
-                </a>
-                <a href="#" class="text-gray-300 hover:text-blue-400">
-                  Twitter
-                </a>
-              </div>
+              Nombre
+            </label>
+            <input
+              id="name"
+              formControlName="name"
+              required
+              class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-300 mb-1"
+            >
+              Correo Electrónico
+            </label>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              required
+              class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-300 mb-1"
+            >
+              Mensaje
+            </label>
+            <textarea
+              id="message"
+              formControlName="message"
+              required
+              class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
+              rows="4"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            [disabled]="!contactForm.valid"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex items-center justify-center"
+          >
+            Enviar Mensaje
+            <i data-lucide="send" class="ml-2 h-4 w-4"></i>
+          </button>
+        </form>
+      </div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-blue-400 mb-4">
+          Información de Contacto
+        </h3>
+        <div class="space-y-4 text-gray-300">
+          <p class="flex items-center">
+            <i data-lucide="mail" class="mr-2 h-5 w-5 text-blue-400"></i>
+            <a href="mailto:{{ email }}" class="hover:text-blue-400">
+              {{ email }}
+            </a>
+          </p>
+          <p class="flex items-center">
+            <i data-lucide="phone" class="mr-2 h-5 w-5 text-blue-400"></i>
+            <a href="tel:+593999016890" class="hover:text-blue-400"
+              >+593 99 901 6890</a
+            >
+          </p>
+          <p class="flex items-center">
+            <i data-lucide="map-pin" class="mr-2 h-5 w-5 text-blue-400"></i>
+            <span>Guayaquil, Ecuador</span>
+          </p>
+          <div>
+            <strong class="text-blue-400 block mb-2">Redes Sociales:</strong>
+            <div class="flex justify-center space-x-4">
+              <a
+                href="https://github.com/KleberMera"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="hover:text-blue-400"
+              >
+                <i data-lucide="github" class="h-6 w-6"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kleberpillasagua/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="hover:text-blue-400"
+              >
+                <i data-lucide="linkedin" class="h-6 w-6"></i>
+              </a>
+              <a
+                href="mailto:kleber@example.com"
+                aria-label="Email"
+                class="hover:text-blue-400"
+              >
+                <i data-lucide="mail" class="h-6 w-6"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
