@@ -59,7 +59,7 @@ export class ProjectsComponent {
         "Frontend: Angular",
         "Backend: Laravel + MySQL"
       ],
-      image: "assets/img/554shots_so.png",
+      image: "assets/img/554shots_so.webp",
       github: "https://github.com/KleberMera/AguaPen",
       live: "https://aguapen.vercel.app"
     }
