@@ -1,69 +1,68 @@
 <section id="contact" class="py-[90px] bg-gray-900">
   <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-6 text-center">
-      Contacto
-    </h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold text-blue-400 mb-4">
-          Envíame un mensaje
-        </h3>
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
-          <div>
-            <label
-              for="name"
-              class="block text-sm font-medium text-gray-300 mb-1"
-            >
-              Nombre
-            </label>
-            <input
-              id="name"
-              formControlName="name"
-              required
-              class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
-            />
-          </div>
-          <div>
-            <label
-              for="email"
-              class="block text-sm font-medium text-gray-300 mb-1"
-            >
-              Correo Electrónico
-            </label>
-            <input
-              id="email"
-              type="email"
-              formControlName="email"
-              required
-              class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
-            />
-          </div>
-          <div>
-            <label
-              for="message"
-              class="block text-sm font-medium text-gray-300 mb-1"
-            >
-              Mensaje
-            </label>
-            <textarea
-              id="message"
-              formControlName="message"
-              required
-              class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
-              rows="4"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            [disabled]="!contactForm.valid"
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex items-center justify-center"
+    <h2 class="text-3xl font-bold text-blue-500 mb-8">Contacto (Seccion en Deserrallo)</h2>
+
+    <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
+      <h3 class="text-xl font-semibold text-blue-400 mb-4">
+        Envíame un mensaje
+      </h3>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+        <div>
+          <label
+            for="name"
+            class="block text-sm font-medium text-gray-300 mb-1"
           >
-            Enviar Mensaje
-            <i data-lucide="send" class="ml-2 h-4 w-4"></i>
-          </button>
-        </form>
-      </div>
-      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
+            Nombre
+          </label>
+          <input
+            id="name"
+            formControlName="name"
+            required
+            class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-medium text-gray-300 mb-1"
+          >
+            Correo Electrónico
+          </label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            required
+            class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label
+            for="message"
+            class="block text-sm font-medium text-gray-300 mb-1"
+          >
+            Mensaje
+          </label>
+          <textarea
+            id="message"
+            formControlName="message"
+            required
+            class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
+            rows="4"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          [disabled]="!contactForm.valid"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex items-center justify-center"
+        >
+          Enviar Mensaje
+          <i data-lucide="send" class="ml-2 h-4 w-4"></i>
+        </button>
+      </form>
+      &nbsp;
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg mb-2">
         <h3 class="text-xl font-semibold text-blue-400 mb-4">Información</h3>
         <div class="space-y-4 text-gray-300">
           <p class="flex items-center">
@@ -82,38 +81,6 @@
             <i data-lucide="map-pin" class="mr-2 h-5 w-5 text-blue-400"></i>
             <span>Guayaquil, Ecuador</span>
           </p>
-          <div>
-            <strong class="text-blue-400 block mb-2 text-center"
-              >Redes Sociales</strong
-            >
-            <div class="flex justify-center space-x-4">
-              <a
-                href="https://github.com/KleberMera"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                class="hover:text-blue-400"
-              >
-                <i data-lucide="github" class="h-6 w-6"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kleberpillasagua/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                class="hover:text-blue-400"
-              >
-                <i data-lucide="linkedin" class="h-6 w-6"></i>
-              </a>
-              <a
-                href="mailto:kleber@example.com"
-                aria-label="Email"
-                class="hover:text-blue-400"
-              >
-                <i data-lucide="mail" class="h-6 w-6"></i>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

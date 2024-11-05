@@ -13,8 +13,8 @@ interface Skill {
 })
 export class SkillsComponent {
   frameworkSkills = [
-    { name: 'Angular', percentage: 90 },
-    { name: 'Laravel', percentage: 85 },
+    { name: 'Angular', percentage: 95  },
+    { name: 'Laravel', percentage: 90 },
     { name: 'Ionic', percentage: 80 },
     { name: 'SQL', percentage: 75 },
     { name: 'Git', percentage: 90 },
