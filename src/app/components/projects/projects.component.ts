@@ -47,19 +47,19 @@ export class ProjectsComponent {
         "Frontend: Angular + Ionic",
         "Backend: Firebase"
       ],
-      image: "assets/img/moniwise.png",
+      image: "assets/img/291shots_so.png",
       github: "https://github.com/KleberMera/MoniWiseApp",
       live: "https://moni-wise-app.vercel.app/login"
     },
     {
       title: "Aguapen App",
-      description: "Aplicación Web para control de la empresa en el Area de Seguridad Industrial.",
+      description: "Aplicación Web para control de la empresa en el Area de Seguridad Industrial bajo supervición del Dpto. de Tics.",
       details: [
         "Creé un sistema para la empresa Aguapen EP.",
         "Frontend: Angular",
         "Backend: Laravel + MySQL"
       ],
-      image: "assets/img/aguapen.png",
+      image: "assets/img/554shots_so.png",
       github: "https://github.com/KleberMera/AguaPen",
       live: "https://aguapen.vercel.app"
     }

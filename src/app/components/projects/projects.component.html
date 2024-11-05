@@ -2,12 +2,13 @@
   <h2 @fadeInUp class="text-3xl font-bold text-blue-500 text-center mb-12">
     Proyectos Destacados
   </h2>
-  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto px-4">
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 ">
+    @for (project of projects; track $index) {
+
     <div
-      *ngFor="let project of projects; let i = index"
       @scaleIn
       class="bg-gray-800 border border-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
-      (mouseenter)="setHoveredProject(i)"
+      (mouseenter)="setHoveredProject($index)"
       (mouseleave)="setHoveredProject(null)"
     >
       <img
@@ -18,21 +19,23 @@
       <h3
         class="text-xl font-semibold mb-2"
         [ngClass]="{
-          'text-blue-400': hoveredProject !== i,
-          'text-blue-300': hoveredProject === i
+          'text-blue-400': hoveredProject !== $index,
+          'text-blue-300': hoveredProject === $index
         }"
       >
         {{ project.title }}
       </h3>
       <p class="text-gray-400 mb-4">{{ project.description }}</p>
+      @for (detail of project.details; track $index) {
+
       <p
-        *ngFor="let detail of project.details; let j = index"
         @fadeInUp
-        [style.animation-delay.ms]="j * 100"
+        [style.animation-delay.ms]="$index * 100"
         class="text-gray-300 mb-1"
       >
         {{ detail }}
       </p>
+      }
       <div class="mt-4 flex space-x-4">
         <a
           [href]="project.github"
@@ -78,5 +81,6 @@
         </a>
       </div>
     </div>
+    }
   </div>
 </section>
