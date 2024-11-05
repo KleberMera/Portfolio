@@ -1,13 +1,19 @@
 <section id="contact" class="py-[90px] bg-gray-900">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-blue-500 mb-8">Contacto (Seccion en Deserrallo)</h2>
+    <h2 class="text-3xl font-bold text-blue-500 mb-8">
+      Contacto (Seccion en Deserrallo)
+    </h2>
 
     <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
       <h3 class="text-xl font-semibold text-blue-400 mb-4">
         Envíame un mensaje
       </h3>
 
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="space-y-4 p-8"
+      >
         <div>
           <label
             for="name"
@@ -61,7 +67,7 @@
           <i data-lucide="send" class="ml-2 h-4 w-4"></i>
         </button>
       </form>
-      &nbsp;
+
       <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg mb-2">
         <h3 class="text-xl font-semibold text-blue-400 mb-4">Información</h3>
         <div class="space-y-4 text-gray-300">
