@@ -27,10 +27,12 @@ export class ContactComponent {
         console.log(data);
         toast.success('Mensaje enviado');
         toast.info('Dentro de poco recibirás respuestas');
+        this.contactForm().reset
       },
       error: (err) => {
         console.log(err);
         toast.error('Error enviando mensaje');
+        this.contactForm().reset
       },
     });
   }
