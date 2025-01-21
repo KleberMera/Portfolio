@@ -18,15 +18,12 @@ import { ContactComponent } from '../components/contact/contact.component';
   imports: [
     NavbarComponent,
     RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
     HeroComponent,
     AboutComponent,
     SkillsComponent,
     FooterComponent,
     ProjectsComponent,
     EducationComponent,
-    ExperienceComponent,
     ContactComponent
   ],
   templateUrl: './layout.component.html',
