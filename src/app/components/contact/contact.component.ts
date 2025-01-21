@@ -1,10 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { toast } from 'ngx-sonner';
 
@@ -27,12 +22,12 @@ export class ContactComponent {
         console.log(data);
         toast.success('Mensaje enviado');
         toast.info('Dentro de poco recibirás respuestas');
-        this.contactForm().reset
+        this.contactForm().reset;
       },
       error: (err) => {
         console.log(err);
         toast.error('Error enviando mensaje');
-        this.contactForm().reset
+        this.contactForm().reset;
       },
     });
   }
