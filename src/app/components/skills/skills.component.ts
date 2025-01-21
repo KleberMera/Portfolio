@@ -5,11 +5,10 @@ interface Skill {
   level: number;
 }
 @Component({
-  selector: 'app-skills',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss',
+    selector: 'app-skills',
+    imports: [CommonModule],
+    templateUrl: './skills.component.html',
+    styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
   frameworkSkills = [

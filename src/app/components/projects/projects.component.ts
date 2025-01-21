@@ -3,37 +3,36 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-projects',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss',
-  animations: [
-    trigger('fadeInUp', [
-      state('void', style({
-        opacity: 0,
-        transform: 'translateY(20px)'
-      })),
-      transition('void => *', [
-        animate('300ms ease-out', style({
-          opacity: 1,
-          transform: 'translateY(0)'
-        }))
-      ])
-    ]),
-    trigger('scaleIn', [
-      state('void', style({
-        opacity: 0,
-        transform: 'scale(0.9)'
-      })),
-      transition('void => *', [
-        animate('300ms ease-out', style({
-          opacity: 1,
-          transform: 'scale(1)'
-        }))
-      ])
-    ])
-  ]
+    selector: 'app-projects',
+    imports: [CommonModule],
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.scss',
+    animations: [
+        trigger('fadeInUp', [
+            state('void', style({
+                opacity: 0,
+                transform: 'translateY(20px)'
+            })),
+            transition('void => *', [
+                animate('300ms ease-out', style({
+                    opacity: 1,
+                    transform: 'translateY(0)'
+                }))
+            ])
+        ]),
+        trigger('scaleIn', [
+            state('void', style({
+                opacity: 0,
+                transform: 'scale(0.9)'
+            })),
+            transition('void => *', [
+                animate('300ms ease-out', style({
+                    opacity: 1,
+                    transform: 'scale(1)'
+                }))
+            ])
+        ])
+    ]
 })
 export class ProjectsComponent {
   hoveredProject: number | null = null;

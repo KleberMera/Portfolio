@@ -13,20 +13,19 @@ import HeroComponent from '../components/hero/hero.component';
 import { ContactComponent } from '../components/contact/contact.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    NavbarComponent,
-    RouterOutlet,
-    HeroComponent,
-    AboutComponent,
-    SkillsComponent,
-    FooterComponent,
-    ProjectsComponent,
-    EducationComponent,
-    ContactComponent
-  ],
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss',
+    selector: 'app-home',
+    imports: [
+        NavbarComponent,
+        RouterOutlet,
+        HeroComponent,
+        AboutComponent,
+        SkillsComponent,
+        FooterComponent,
+        ProjectsComponent,
+        EducationComponent,
+        ContactComponent
+    ],
+    templateUrl: './layout.component.html',
+    styleUrl: './layout.component.scss'
 })
 export default class LayoutComponent {}

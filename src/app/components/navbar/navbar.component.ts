@@ -3,11 +3,10 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
+    selector: 'app-navbar',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
   @ViewChild('sidebar') sidebar!: ElementRef;
