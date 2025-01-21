@@ -1,29 +1,37 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject, signal } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { ContactService } from './services/contact.service';
+import { toast } from 'ngx-sonner';
 
 @Component({
-    selector: 'app-contact',
-    imports: [ReactiveFormsModule],
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.scss'
+  selector: 'app-contact',
+  imports: [ReactiveFormsModule],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  contactForm: FormGroup;
-  email : string = "klebermera2016@gmail.com";
+  private readonly _contactService = inject(ContactService);
+  email = signal<string>('klebermera2016@gmail.com');
 
-  constructor(private fb: FormBuilder) {
-    this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
-    });
-  }
+  contactForm = this._contactService.formContact();
 
   onSubmit() {
-    if (this.contactForm.valid) {
-      console.log('Form submitted:', this.contactForm.value);
-      // Handle form submission logic here
-      this.contactForm.reset();
-    }
+    console.log(this.contactForm().value);
+    this._contactService.sendMessage(this.contactForm().value).subscribe({
+      next: (data) => {
+        console.log(data);
+        toast.success('Mensaje enviado');
+        toast.info('Dentro de poco recibirás respuestas');
+      },
+      error: (err) => {
+        console.log(err);
+        toast.error('Error enviando mensaje');
+      },
+    });
   }
 }

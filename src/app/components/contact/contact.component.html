@@ -1,7 +1,7 @@
 <section id="contact" class="py-[90px] bg-gray-900">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-blue-500 mb-8">
-      Contacto (Seccion en Deserrallo)
+      Contacto
     </h2>
 
     <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
@@ -10,7 +10,7 @@
       </h3>
 
       <form
-        [formGroup]="contactForm"
+        [formGroup]="contactForm()"
         (ngSubmit)="onSubmit()"
         class="space-y-4 p-8"
       >
@@ -24,6 +24,20 @@
           <input
             id="name"
             formControlName="name"
+            required
+            class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label
+            for="phone"
+            class="block text-sm font-medium text-gray-300 mb-1"
+          >
+            Teléfono
+          </label>
+          <input
+            id="phone"
+            formControlName="phone"
             required
             class="w-full bg-gray-700 text-gray-300 rounded-md p-2"
           />
@@ -60,7 +74,7 @@
         </div>
         <button
           type="submit"
-          [disabled]="!contactForm.valid"
+          [disabled]="!contactForm().valid"
           class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex items-center justify-center"
         >
           Enviar Mensaje
@@ -73,8 +87,8 @@
         <div class="space-y-4 text-gray-300">
           <p class="flex items-center">
             <i data-lucide="mail" class="mr-2 h-5 w-5 text-blue-400"></i>
-            <a href="mailto:{{ email }}" class="hover:text-blue-400">
-              {{ email }}
+            <a href="mailto:{{ email() }}" class="hover:text-blue-400">
+              {{ email() }}
             </a>
           </p>
           <p class="flex items-center">
