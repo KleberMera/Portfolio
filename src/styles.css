@@ -1,17 +1,4 @@
-@import "tailwindcss";
 
-@theme {
-  --color-blue-romance-50: #effaf2;
-  --color-blue-romance-100: #d7f4dd;
-  --color-blue-romance-200: #c5edcf;
-  --color-bluee-romance-300: #81d49b;
-  --color-bluee-romance-400: #4cbb72;
-  --color-blue-romance-500: #2a9f56;
-  --color-blue-romance-600: #1b8044;
-  --color-blue-romance-700: #166638;
-  --color-blue-romance-800: #14512e;
-  --color-blue-romance-900: #114328;
-  --color-blue-romance-950: #082616;
-  --color-smoke-900: #373843;
-  --color-smoke-950: #0e0e11;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
