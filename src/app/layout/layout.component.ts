@@ -11,20 +11,21 @@ import { EducationComponent } from '../components/education/education.component'
 import { ExperienceComponent } from '../components/experience/experience.component';
 import HeroComponent from '../components/hero/hero.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { HeaderComponent } from "../components/header/header.component";
 
 @Component({
     selector: 'app-home',
     imports: [
-        NavbarComponent,
-        RouterOutlet,
-        HeroComponent,
-        AboutComponent,
-        SkillsComponent,
-        FooterComponent,
-        ProjectsComponent,
-        EducationComponent,
-        ContactComponent
-    ],
+    RouterOutlet,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    FooterComponent,
+    ProjectsComponent,
+    EducationComponent,
+    ContactComponent,
+    HeaderComponent
+],
     templateUrl: './layout.component.html',
     styleUrl: './layout.component.scss'
 })

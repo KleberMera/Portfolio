@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
     styleUrl: './hero.component.scss'
 })
 export default class HeroComponent {
-  ngAfterViewInit() {
-    lucide.createIcons();
- }
+  technologies = [
+    'Angular', 
+    'Ionic', 
+    'Nest.js', 
+    'Laravel', 
+    'TypeScript', 
+    'Node.js', 
+    'PostgreSQL', 
+    'Docker'
+  ];
 }

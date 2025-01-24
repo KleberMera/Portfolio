@@ -1,0 +1,16 @@
+@keyframes rayMove {
+    0% { transform: translateX(-100%) rotate(var(--rotate-start)); opacity: 0.2; }
+    100% { transform: translateX(200%) rotate(var(--rotate-end)); opacity: 0.7; }
+  }
+
+  .ray {
+    position: absolute;
+    height: 10px;
+    background: linear-gradient(90deg, 
+      rgba(42,159,86,0) 0%, 
+      rgba(42,159,86,0.8) 50%, 
+      rgba(42,159,86,0) 100%);
+    animation: rayMove 10s linear infinite;
+    border-radius: 50px;
+    mix-blend-mode: screen;
+  }

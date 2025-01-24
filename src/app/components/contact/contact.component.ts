@@ -7,7 +7,7 @@ import { toast } from 'ngx-sonner';
   selector: 'app-contact',
   imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrl: './contact.component.css',
 })
 export class ContactComponent {
   private readonly _contactService = inject(ContactService);

@@ -1,62 +1,67 @@
-<section id="projects" class="mb-12 py-16 bg-gray-900">
-  <h2 @fadeInUp class="text-3xl font-bold text-blue-500 text-center mb-12">
-    Proyectos Destacados
-  </h2>
-  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-    @for (project of projects; track $index) {
+<section class="py-20 container max-w-6xl mx-auto px-4">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-bold text-blue-romance-200 mb-4">
+      Proyectos Desarrollados
+    </h2>
+    <p class="text-blue-romance-300 max-w-2xl mx-auto">
+      Soluciones tecnológicas innovadoras que demuestran mi experiencia en desarrollo full-stack.
+    </p>
+  </div>
 
-    <div
-      @scaleIn
-      class="bg-gray-800 border border-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
-      (mouseenter)="setHoveredProject($index)"
-      (mouseleave)="setHoveredProject(null)"
-    >
-      <img
-        [src]="project.image"
-        [alt]="project.title"
-        class="w-full h-50 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105"
-      />
-      <h3
-        class="text-xl font-semibold mb-2"
-        [ngClass]="{
-          'text-blue-400': hoveredProject !== $index,
-          'text-blue-300': hoveredProject === $index
-        }"
-      >
-        {{ project.title }}
-      </h3>
-      <p class="text-gray-400 mb-4">{{ project.description }}</p>
-      @for (detail of project.details; track $index) {
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for (project of projects(); track project.title) {
+      <div class="bg-blue-romance-950/50 border border-blue-romance-800 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:-translate-y-4 hover:shadow-4xl">
+        <div class="relative group">
+          <img 
+            [src]="project.images[project.currentImageIndex]" 
+            alt="{{project.title}}" 
+            class="w-full h-56 object-cover"
+          />
+          @if (project.images.length > 1) {
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              @for (dot of project.images; track $index) {
+                <button 
+                  (click)="changeImage(project, $index)"
+                  class="w-2 h-2 rounded-full {{ project.currentImageIndex === $index ? 'bg-blue-romance-500' : 'bg-blue-romance-300' }}"
+                ></button>
+              }
+            </div>
+          }
+        </div>
 
-      <p
-        @fadeInUp
-        [style.animation-delay.ms]="$index * 100"
-        class="text-gray-300 mb-1"
-      >
-        {{ detail }}
-      </p>
-      }
-      <div class="mt-4 flex space-x-4">
-        <a
-          [href]="project.github"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-        >
-          <i data-lucide="github" class="mr-2 -ml-1 w-4 h-4"></i>
-          GitHub
-        </a>
-        <a
-          [href]="project.live"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-        >
-          <i data-lucide="external-link" class="mr-2 -ml-1 w-4 h-4"></i>
-          Ver Proyecto
-        </a>
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <span class="bg-blue-romance-600 text-white px-3 py-1 rounded-full text-xs">
+              {{project.type}}
+            </span>
+            <span class="text-blue-romance-300 font-medium">
+              {{project.client}}
+            </span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-blue-romance-200 mb-3">
+            {{project.title}}
+          </h3>
+          
+          <p class="text-blue-romance-300 mb-4 line-clamp-3">
+            {{project.description}}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            @for (tech of project.technologies; track tech) {
+              <span class="bg-blue-romance-800 text-blue-romance-200 px-2 py-1 rounded-full text-xs">
+                {{tech}}
+              </span>
+            }
+          </div>
+
+          <div class="flex space-x-4">
+            <button class="bg-blue-romance-600 text-white px-4 py-2 rounded-full hover:bg-blue-romance-700 transition-colors w-full text-center">
+              Ver Detalles
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
     }
   </div>
 </section>

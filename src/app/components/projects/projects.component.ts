@@ -1,74 +1,64 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-
+import { Component, signal } from '@angular/core';
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  images: string[];
+  type: string;
+  client: string;
+  currentImageIndex?: number;
+}
 @Component({
     selector: 'app-projects',
     imports: [CommonModule],
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.scss',
-    animations: [
-        trigger('fadeInUp', [
-            state('void', style({
-                opacity: 0,
-                transform: 'translateY(20px)'
-            })),
-            transition('void => *', [
-                animate('300ms ease-out', style({
-                    opacity: 1,
-                    transform: 'translateY(0)'
-                }))
-            ])
-        ]),
-        trigger('scaleIn', [
-            state('void', style({
-                opacity: 0,
-                transform: 'scale(0.9)'
-            })),
-            transition('void => *', [
-                animate('300ms ease-out', style({
-                    opacity: 1,
-                    transform: 'scale(1)'
-                }))
-            ])
-        ])
-    ]
 })
 export class ProjectsComponent {
-  hoveredProject: number | null = null;
-
-  projects = [
+  projects = signal([
     {
-      title: "Moniwise App",
-      description: "Aplicación móvil (Android & iOS) para la gestión de gastos.",
-      details: [
-        "Desarrollé una aplicación de gestión de gastos multiplataforma.",
-        "Frontend: Angular + Ionic",
-        "Backend: Firebase"
+      title: 'Aguapen App',
+      description: 'Sistema de control de entrada y salida de equipos para el área de Seguridad Industrial de Aguapen EP.',
+      technologies: ['Angular', 'Laravel', 'MySQL', 'Laravel Sanctum'],
+      type: 'Web App',
+      client: 'Aguapen EP',
+      images: [
+        'assets/img/554shots_so.webp', 
+        '/api/placeholder/800/600?text=Aguapen+App+2', 
+        '/api/placeholder/800/600?text=Aguapen+App+3'
       ],
-      image: "assets/img/291shots_so.png",
-      github: "https://github.com/KleberMera/MoniWiseApp",
-      live: "https://moni-wise-app.vercel.app/login"
+      currentImageIndex: 0
     },
     {
-      title: "Aguapen App",
-      description: "Aplicación Web para control de la empresa en el Area de Seguridad Industrial bajo supervición del Dpto. de Tics.",
-      details: [
-        "Creé un sistema para la empresa Aguapen EP.",
-        "Frontend: Angular",
-        "Backend: Laravel + MySQL"
+      title: 'Moniwise (Finzen) App',
+      description: 'Aplicación de gestión de finanzas personales, próximamente actualizada con tecnologías modernas.',
+      technologies: ['Ionic', 'Fat Free Framework', 'Angular', 'Firebase', 'Nest.js', 'Prisma', 'PostgreSQL'],
+      type: 'Mobile App',
+      client: 'Proyecto Personal',
+      images: [
+        'assets/img/291shots_so.png', 
+        '/api/placeholder/800/600?text=Moniwise+App+2'
       ],
-      image: "assets/img/554shots_so.webp",
-      github: "https://github.com/KleberMera/AguaPen",
-      live: "https://aguapen.vercel.app"
+      currentImageIndex: 0
+    },
+    {
+      title: 'Nuevo Amanecer App',
+      description: 'Aplicación bancaria desarrollada con tecnologías modernas y desplegada en Render.',
+      technologies: ['Angular', 'Firebase', 'Nest.js', 'PostgreSQL'],
+      type: 'Fintech App',
+      client: 'Nuevo Amanecer',
+      images: [
+        'assets/img/556shots_so.png', 
+        '/api/placeholder/800/600?text=Nuevo+Amanecer+2', 
+        '/api/placeholder/800/600?text=Nuevo+Amanecer+3'
+      ],
+      currentImageIndex: 0
     }
-  ];
+  ]);
 
-  constructor() { }
-
-  ngOnInit(): void { }
-
-  setHoveredProject(index: number | null): void {
-    this.hoveredProject = index;
+  changeImage(project: Project, index: number) {
+    project.currentImageIndex = index;
   }
 }

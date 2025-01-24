@@ -1,0 +1,8 @@
+<div class="fixed inset-0 z-[-1] overflow-hidden bg-smoke-950">
+    @for (ray of rays; track ray.id) {
+      <div 
+        class="absolute ray" 
+        [style]="ray.style">
+      </div>
+    }
+  </div>

@@ -1,0 +1,44 @@
+<div 
+      class="fixed inset-0 bg-gradient-to-br from-blue-romance-950 to-smoke-950 bg-opacity-95 md:hidden z-50 animate-slide-in"
+      (click)="close.emit()"
+    >
+      <div 
+        class="w-3/4 h-full bg-smoke-950 backdrop-blur-lg shadow-2xl p-8 relative"
+        (click)="$event.stopPropagation()"
+      >
+        <div class="flex items-center mb-12 space-x-4">
+          <div class="w-12 h-12 bg-blue-romance-600 rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-lg">MP</span>
+          </div>
+          <h2 class="text-2xl font-bold text-blue-romance-200">Menú</h2>
+        </div>
+
+        <button 
+          (click)="close.emit()" 
+          class="absolute top-6 right-6 text-blue-romance-300 hover:text-blue-romance-500 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <nav class="flex flex-col space-y-8 mt-8">
+          @for (item of menuItems(); track item.label) {
+            <a 
+              href="#{{item.link}}" 
+              class="text-2xl text-blue-romance-200 relative group"
+              (click)="close.emit()"
+            >
+              {{item.label}}
+              <span class="absolute -bottom-2 left-0 w-0 h-1 bg-blue-romance-500 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+            </a>
+          }
+        </nav>
+
+        <div class="absolute bottom-12 left-0 right-0 text-center">
+          <button class="bg-blue-romance-600 text-white px-6 py-3 rounded-full hover:bg-blue-romance-700 transition-colors">
+            Descargar CV
+          </button>
+        </div>
+      </div>
+    </div>
