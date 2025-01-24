@@ -1,38 +1,38 @@
-  <!-- Skills -->
-  <section id="skills" class=" py-[90px]">
-    <h2 class="text-2xl font-semibold text-blue-400 mb-6">Habilidades Técnicas</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold text-blue-400 mb-4">Lenguajes de Programación</h3>
-        <div class="space-y-4">
-          <ng-container *ngFor="let skill of programmingSkills">
-            <div class="space-y-2">
-              <div class="flex justify-between items-center">
-                <span class="text-sm font-medium text-gray-300">{{ skill.name }}</span>
-                <span class="text-sm font-medium text-gray-400">{{ skill.percentage }}%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-2.5">
-                <div class="bg-blue-600 h-2.5 rounded-full" [style.width]="skill.percentage + '%'"></div>
-              </div>
-            </div>
-          </ng-container>
-        </div>
-      </div>
-      <div class="bg-gray-800 border border-gray-700 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold text-blue-400 mb-4">Frameworks y Tecnologías</h3>
-        <div class="space-y-4">
-          <ng-container *ngFor="let skill of frameworkSkills">
-            <div class="space-y-2">
-              <div class="flex justify-between items-center">
-                <span class="text-sm font-medium text-gray-300">{{ skill.name }}</span>
-                <span class="text-sm font-medium text-gray-400">{{ skill.percentage }}%</span>
-              </div>
-              <div class="w-full bg-gray-700 rounded-full h-2.5">
-                <div class="bg-green-600 h-2.5 rounded-full" [style.width]="skill.percentage + '%'"></div>
-              </div>
-            </div>
-          </ng-container>
-        </div>
-      </div>
+<section class="text-blue-romance-100 py-16">
+  <div class="container max-w-6xl mx-auto px-4">
+    <div class="flex items-center space-x-4 mb-8">
+      <div class="w-2 h-10 bg-blue-romance-500"></div>
+      <h2 class="text-3xl font-bold text-blue-romance-300">
+        Habilidades Técnicas
+      </h2>
     </div>
-  </section>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      @for (category of skillCategories; track category) {
+        <div class="bg-blue-romance-950/50 border border-blue-romance-800  rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+          <h3 class="text-xl font-semibold text-blue-romance-300 mb-4 border-b border-blue-romance-700 pb-2">
+            {{category.name}}
+          </h3>
+          <div class="space-y-4">
+            @for (skill of category.skills; track skill) {
+              <div class="group">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-blue-romance-200 font-medium">{{skill.name}}</span>
+                  <span class="text-blue-romance-300 text-sm font-bold">
+                    {{skill.level}}%
+                  </span>
+                </div>
+                <div class="w-full bg-blue-romance-800 rounded-full h-3 overflow-hidden">
+                  <div 
+                    class="bg-blue-romance-500 h-3 rounded-full transition-all duration-500 group-hover:bg-blue-romance-400" 
+                    [style.width.%]="skill.level"
+                  ></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

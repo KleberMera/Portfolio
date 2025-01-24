@@ -11,19 +11,33 @@ interface Skill {
     styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  frameworkSkills = [
-    { name: 'Angular', percentage: 95  },
-    { name: 'Laravel', percentage: 90 },
-    { name: 'Ionic', percentage: 80 },
-    { name: 'SQL', percentage: 75 },
-    { name: 'Git', percentage: 90 },
-  ];
-
-  programmingSkills = [
-    { name: 'TypeScript', percentage: 90 },
-    { name: 'Java', percentage: 85 },
-    { name: 'PHP', percentage: 80 },
-    { name: 'Python', percentage: 75 },
-    { name: 'C++', percentage: 40 },
+  skillCategories = [
+    {
+      name: 'Lenguajes de Programación',
+      skills: [
+        { name: 'TypeScript', level: 90 },
+        { name: 'JavaScript', level: 85 },
+        { name: 'PHP', level: 75 },
+        { name: 'Python', level: 60 }
+      ]
+    },
+    {
+      name: 'Frameworks y Librerías',
+      skills: [
+        { name: 'Angular', level: 90 },
+        { name: 'Laravel', level: 80 },
+        { name: 'Ionic', level: 75 },
+        { name: '', level: 60 }
+      ]
+    },
+    {
+      name: 'Herramientas y Tecnologías',
+      skills: [
+        { name: 'Git', level: 85 },
+        { name: 'Docker', level: 40 },
+        { name: 'MySQL', level: 80 },
+        { name: 'Firebase', level: 65 }
+      ]
+    }
   ];
 }

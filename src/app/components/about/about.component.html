@@ -1,16 +1,65 @@
-<section id="" class="">
-  <h2 class="text-3xl font-semibold text-blue-400 mb-4 text-center">
-    Sobre mí
-  </h2>
-  <div class="max-w-3xl mx-auto">
-    <p class="text-gray-300 text-xl mb-4">
-      Soy un apasionado desarrollador de software con experiencia en
-      aplicaciones móviles y de escritorio. Actualmente, estoy cursando mi
-      último año de Ingeniería en Tecnologia de la información.
-    </p>
-    <p class="text-gray-300 text-xl">
-      Disfruto explorando nuevas tecnologías y desarrollando proyectos
-      fascinantes tanto en el backend como en el frontend.
-    </p>
+<section class="text-blue-romance-100 py-16">
+  <div class="container max-w-6xl mx-auto px-4">
+    <div class="flex items-center space-x-4 mb-8">
+      <div class="w-2 h-10 bg-blue-romance-500"></div>
+      <h2 class="text-3xl font-bold text-blue-romance-300">
+        Sobre Mí
+      </h2>
+    </div>
+    
+    <div class="space-y-6">
+      <p class="text-xl text-blue-romance-200 leading-relaxed">
+        Soy un desarrollador full stack apasionado por crear soluciones tecnológicas innovadoras. Actualmente, me encuentro cursando el último año de Ingeniería en Tecnologías de la Información y Comunicación, preparándome para dar el salto al mundo profesional con sólidas habilidades técnicas.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-blue-romance-950/50 border border-blue-romance-800  rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+          <div class="flex items-center space-x-4 mb-4">
+            <i class="fas fa-graduation-cap text-blue-romance-500 text-3xl"></i>
+            <h4 class="text-xl font-semibold text-blue-romance-300">
+              Educación
+            </h4>
+          </div>
+          <div class="space-y-2">
+            <p class="text-blue-romance-200 font-medium">
+              Ingeniería en Tecnologías de la Información y Comunicación
+            </p>
+            <p class="text-blue-romance-200 text-sm opacity-80">
+              Último año de carrera - Próximo a graduarme
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-blue-romance-950/50 border border-blue-romance-800  rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+          <div class="flex items-center space-x-4 mb-4">
+            <i class="fas fa-briefcase text-blue-romance-500 text-3xl"></i>
+            <h4 class="text-xl font-semibold text-blue-romance-300">
+              Experiencia
+            </h4>
+          </div>
+          <div class="space-y-2">
+            <p class="text-blue-romance-200 font-medium">
+              Desarrollador Full Stack
+            </p>
+            <p class="text-blue-romance-200 text-sm opacity-80">
+              Proyectos web y móviles
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-blue-romance-950/50 border border-blue-romance-800  rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+        <h4 class="text-xl font-bold text-blue-romance-300 mb-4">
+          Mis Intereses
+        </h4>
+        <div class="flex flex-wrap gap-3">
+          @for (interest of interests; track interest) {
+            <span class="bg-blue-romance-800 text-blue-romance-200 px-3 py-1 rounded-full text-sm transition-colors hover:bg-blue-romance-700">
+              {{interest}}
+            </span>
+          }
+        </div>
+      </div>
+    </div>
   </div>
 </section>
