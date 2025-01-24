@@ -3,9 +3,6 @@
     <h2 class="text-4xl font-bold text-blue-romance-200 mb-4">
       Proyectos Desarrollados
     </h2>
-    <p class="text-blue-romance-300 max-w-2xl mx-auto">
-      Soluciones tecnológicas innovadoras que demuestran mi experiencia en desarrollo full-stack.
-    </p>
   </div>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -25,43 +22,99 @@
                   class="w-2 h-2 rounded-full {{ project.currentImageIndex === $index ? 'bg-blue-romance-500' : 'bg-blue-romance-300' }}"
                 ></button>
               }
-            </div>
+            
+          </div>
+          }
+            
+     
+      </div>
+
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-4">
+          <span class="bg-blue-romance-600 text-white px-3 py-1 rounded-full text-xs">
+            {{project.type}}
+          </span>
+          <span class="text-blue-romance-300 font-medium">
+            {{project.client}}
+          </span>
+        </div>
+
+        <h3 class="text-2xl font-bold text-blue-romance-200 mb-3">
+          {{project.title}}
+        </h3>
+        
+        <p class="text-blue-romance-300 mb-4 line-clamp-3">
+          {{project.description}}
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          @for (tech of project.technologies; track tech) {
+            <span class="bg-blue-romance-800 text-blue-romance-200 px-2 py-1 rounded-full text-xs">
+              {{tech}}
+            </span>
           }
         </div>
 
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <span class="bg-blue-romance-600 text-white px-3 py-1 rounded-full text-xs">
-              {{project.type}}
-            </span>
-            <span class="text-blue-romance-300 font-medium">
-              {{project.client}}
-            </span>
+        <div class="flex space-x-4">
+          <button 
+            (click)="openProjectDetails(project)"
+            class="bg-blue-romance-600 text-white px-4 py-2 rounded-full hover:bg-blue-romance-700 transition-colors w-full text-center"
+          >
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+@if (selectedProject()) {
+  <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div class="bg-smoke-950 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-8">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-3xl font-bold text-blue-romance-200">
+            {{selectedProject()?.title}}
+          </h2>
+          <button 
+            (click)="closeProjectDetails()"
+            class="text-blue-romance-300 hover:text-blue-romance-500"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <img 
+              [src]="selectedProject()?.images[0]" 
+              class="w-full rounded-xl mb-4"
+            />
+            <h3 class="text-xl font-semibold text-blue-romance-300 mb-4">Descripción Completa</h3>
+            <p class="text-blue-romance-200">
+              {{selectedProject()?.details.fullDescription}}
+            </p>
           </div>
+          <div>
+            <h3 class="text-xl font-semibold text-blue-romance-300 mb-4">Desafíos</h3>
+            <ul class="list-disc pl-5 text-blue-romance-200 space-y-2">
+              @for (challenge of selectedProject()?.details.challenges; track challenge) {
+                <li>{{challenge}}</li>
+              }
+            </ul>
 
-          <h3 class="text-2xl font-bold text-blue-romance-200 mb-3">
-            {{project.title}}
-          </h3>
-          
-          <p class="text-blue-romance-300 mb-4 line-clamp-3">
-            {{project.description}}
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-6">
-            @for (tech of project.technologies; track tech) {
-              <span class="bg-blue-romance-800 text-blue-romance-200 px-2 py-1 rounded-full text-xs">
-                {{tech}}
-              </span>
-            }
-          </div>
-
-          <div class="flex space-x-4">
-            <button class="bg-blue-romance-600 text-white px-4 py-2 rounded-full hover:bg-blue-romance-700 transition-colors w-full text-center">
-              Ver Detalles
-            </button>
+            <h3 class="text-xl font-semibold text-blue-romance-300 mt-6 mb-4">Soluciones</h3>
+            <ul class="list-disc pl-5 text-blue-romance-200 space-y-2">
+              @for (solution of selectedProject()?.details.solutions; track solution) {
+                <li>{{solution}}</li>
+              }
+            </ul>
           </div>
         </div>
       </div>
-    }
+    </div>
   </div>
+}
 </section>
