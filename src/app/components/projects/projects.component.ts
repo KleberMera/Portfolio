@@ -80,7 +80,7 @@ export class ProjectsComponent {
       description: 'Aplicación bancaria desarrollada con tecnologías modernas y desplegada en Render.',
       technologies: ['Angular', 'Firebase', 'Nest.js', 'PostgreSQL'],
       type: 'Fintech App',
-      client: 'Proyecto Personal',
+      client: 'Empresa',
       images: [
         `https://picsum.photos/800/600?random=${Math.random()}`,
         `https://picsum.photos/800/600?random=${Math.random()}`,

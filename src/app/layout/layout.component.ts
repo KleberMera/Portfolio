@@ -22,7 +22,6 @@ import { HeaderComponent } from "../components/header/header.component";
     SkillsComponent,
     FooterComponent,
     ProjectsComponent,
-    EducationComponent,
     ContactComponent,
     HeaderComponent
 ],

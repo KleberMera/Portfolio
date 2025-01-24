@@ -2,20 +2,16 @@ import { Component, inject, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { toast } from 'ngx-sonner';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
-  formData = {
-    name: '',
-    email: '',
-    message: ''
-  };
+
 
   private readonly _contactService = inject(ContactService);
   email = signal<string>('klebermera2016@gmail.com');

@@ -8,6 +8,8 @@ interface Contact {
   phone: string;
   email: string;
   message: string;
+  service: string;
+
 }
 
 @Injectable({
@@ -26,6 +28,7 @@ export class ContactService {
           Validators.email,
         ]),
         message: new FormControl(data.message, [Validators.required]),
+        service: new FormControl(data.service, [Validators.required]),
       })
     );
     return form;

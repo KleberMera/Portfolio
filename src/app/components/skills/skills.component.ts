@@ -27,7 +27,7 @@ export class SkillsComponent {
         { name: 'Angular', level: 90 },
         { name: 'Laravel', level: 80 },
         { name: 'Ionic', level: 75 },
-        { name: '', level: 60 }
+        { name: 'Nest js', level: 80 }
       ]
     },
     {

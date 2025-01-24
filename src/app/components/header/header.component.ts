@@ -12,9 +12,11 @@ export class HeaderComponent {
   mobileMenuOpen = signal(false);
   menuItems = signal([
     { label: 'Inicio', link: 'home' },
-    { label: 'Proyectos', link: 'projects' },
     { label: 'Sobre Mí', link: 'about' },
-    { label: 'Contacto', link: 'contact' }
+    { label: 'Habilidades', link: 'contact' },
+    { label: 'Proyectos', link: 'projects' },
+   
+   
   ]);
 
   toggleMobileMenu() {

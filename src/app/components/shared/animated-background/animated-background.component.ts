@@ -29,9 +29,9 @@ export class AnimatedBackgroundComponent {
 
   getRandomGradient() {
     const colors = [
-      'rgba(42,159,86,0.8)', 
-      'rgba(81,212,155,0.6)', 
-      'rgba(38,144,82,0.7)'
+      '#0a429e', 
+      '#0174ff', 
+      '#0174ff'
     ];
     return `linear-gradient(90deg, 
       rgba(0,0,0,0) 0%, 
