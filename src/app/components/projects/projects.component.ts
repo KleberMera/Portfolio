@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
+
 interface Project {
   title: string;
   description: string;
@@ -15,11 +16,16 @@ interface Project {
   };
   currentImageIndex?: number;
 }
+
 @Component({
-    selector: 'app-projects',
-    imports: [CommonModule],
-    templateUrl: './projects.component.html',
-    styleUrl: './projects.component.scss',
+  selector: 'app-projects',
+  imports: [CommonModule],
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.css'],
+  host: {
+    '(document:keydown.arrowleft)': 'onKeyLeft($event)',
+    '(document:keydown.arrowright)': 'onKeyRight($event)'
+  }
 })
 export class ProjectsComponent {
   selectedProject = signal<Project | any>(null);
@@ -102,6 +108,59 @@ export class ProjectsComponent {
       }
     }
   ]);
+
+  private startX: number = 0;
+  private threshold: number = 100; // Distancia mínima para considerar un deslizamiento
+
+  onTouchStart(event: TouchEvent, project: Project) {
+    this.startX = event.touches[0].clientX;
+  }
+
+  onTouchMove(event: TouchEvent, project: Project) {
+    if (!this.startX) return;
+
+    const currentX = event.touches[0].clientX;
+    const diffX = this.startX - currentX;
+
+    if (Math.abs(diffX) > this.threshold) {
+      if (diffX > 0) {
+        this.nextImage(project);
+      } else {
+        this.prevImage(project);
+      }
+      this.startX = 0;
+    }
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    this.startX = 0;
+  }
+
+  onKeyLeft(event: KeyboardEvent) {
+    if (this.selectedProject()) {
+      this.prevImage(this.selectedProject());
+    }
+  }
+
+  onKeyRight(event: KeyboardEvent) {
+    if (this.selectedProject()) {
+      this.nextImage(this.selectedProject());
+    }
+  }
+
+  nextImage(project: Project) {
+    if (!project.images || project.images.length <= 1) return;
+    
+    const currentIndex = project.currentImageIndex ?? 0;
+    project.currentImageIndex = (currentIndex + 1) % project.images.length;
+  }
+
+  prevImage(project: Project) {
+    if (!project.images || project.images.length <= 1) return;
+    
+    const currentIndex = project.currentImageIndex ?? 0;
+    project.currentImageIndex = (currentIndex - 1 + project.images.length) % project.images.length;
+  }
 
   changeImage(project: Project, index: number) {
     project.currentImageIndex = index;
