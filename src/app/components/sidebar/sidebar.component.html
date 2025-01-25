@@ -25,12 +25,17 @@
         <nav class="flex flex-col space-y-8 mt-8">
           @for (item of menuItems(); track item.label) {
             <a 
-              href="#{{item.link}}" 
-              class="text-2xl text-blue-romance-200 relative group"
-              (click)="close.emit()"
+              (click)="scrollToSection(item.link)"
+              [class]="isActiveSection(item.link) 
+                ? 'text-2xl text-blue-romance-500 font-bold relative group' 
+                : 'text-2xl text-blue-romance-200 relative group'"
             >
               {{item.label}}
-              <span class="absolute -bottom-2 left-0 w-0 h-1 bg-blue-romance-500 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+              <span 
+                [class]="isActiveSection(item.link) 
+                  ? 'absolute -bottom-2 left-0 w-full h-1 bg-blue-romance-500' 
+                  : 'absolute -bottom-2 left-0 w-0 h-1 bg-blue-romance-500 group-hover:w-full transition-all duration-300 ease-in-out'"
+              ></span>
             </a>
           }
         </nav>

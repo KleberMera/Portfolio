@@ -10,14 +10,25 @@
       <nav class="hidden md:flex space-x-6 items-center">
         @for (item of menuItems(); track item.label) {
           <a 
-            href="#{{item.link}}" 
-            class="relative group text-blue-romance-300 hover:text-blue-romance-500 transition-all duration-300 ease-in-out"
+            (click)="scrollToSection(item.link)"
+            [class]="isActiveSection(item.link) 
+              ? 'relative group text-blue-romance-500 font-bold transition-all duration-300 ease-in-out cursor-pointer' 
+              : 'relative group text-blue-romance-300 hover:text-blue-romance-500 transition-all duration-300 ease-in-out cursor-pointer'"
           >
             {{item.label}}
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-romance-500 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+            <span 
+              [class]="isActiveSection(item.link) 
+                ? 'absolute -bottom-1 left-0 w-full h-0.5 bg-blue-romance-500' 
+                : 'absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-romance-500 group-hover:w-full transition-all duration-300 ease-in-out'"
+            ></span>
           </a>
         }
-        <button class="bg-blue-romance-600 text-white px-4 py-2 rounded-full hover:bg-blue-romance-700 transition-colors">
+        <button 
+          (click)="scrollToSection('contact')"
+          [class]="isActiveSection('contact') 
+            ? 'bg-blue-romance-950 text-white px-4 py-2 rounded-full hover:bg-blue-romance-600 transition-colors' 
+            : 'bg-blue-romance-600 text-white px-4 py-2 rounded-full hover:bg-blue-romance-700 transition-colors'"
+        >
           Contáctame
         </button>
       </nav>
