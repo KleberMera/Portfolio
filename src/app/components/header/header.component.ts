@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private observers: IntersectionObserver[] = [];
 
   ngOnInit() {
-    this.setupIntersectionObservers();
+   this.setupIntersectionObservers();
   }
 
   ngOnDestroy() {

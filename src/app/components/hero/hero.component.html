@@ -15,7 +15,9 @@
       </p>
       
       <div class="flex space-x-4">
-        <button class="bg-blue-romance-600 text-white px-6 py-3 rounded-full hover:bg-blue-romance-700 transition-colors">
+        <button 
+          (click)="scrollToSection('projects')"
+        class="bg-blue-romance-600 text-white px-6 py-3 rounded-full hover:bg-blue-romance-700 transition-colors">
           Ver Proyectos
         </button>
         <button class="border border-blue-romance-500 text-blue-romance-300 px-6 py-3 rounded-full hover:bg-blue-romance-600/20 transition-colors">
@@ -26,7 +28,7 @@
       <div class="pt-8">
         <h3 class="text-lg font-semibold mb-4 text-blue-romance-300">Tecnologías</h3>
         <div class="flex flex-wrap gap-3">
-          @for (tech of technologies; track tech) {
+          @for (tech of technologies(); track tech) {
             <span class="bg-blue-romance-800 text-blue-romance-200 px-3 py-1 rounded-full text-sm">
               {{tech}}
             </span>

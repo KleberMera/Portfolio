@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
     selector: 'app-hero',
@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
     styleUrl: './hero.component.scss'
 })
 export default class HeroComponent {
-  technologies = [
+  currentActiveSection = signal('hero');
+ 
+
+  technologies = signal([
     'Angular', 
     'Ionic', 
     'Nest.js', 
@@ -16,5 +19,17 @@ export default class HeroComponent {
     'Node.js', 
     'PostgreSQL', 
     'Docker'
-  ];
+  ])
+
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  isActiveSection(sectionLink: string): boolean {
+    return this.currentActiveSection() === sectionLink;
+  }
 }
