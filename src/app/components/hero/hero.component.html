@@ -1,34 +1,40 @@
-<section class="min-h-screen flex items-center justify-center  text-blue-romance-100 relative overflow-hidden">
+<section class="min-h-screen flex items-center justify-center text-blue-romance-100 relative overflow-hidden">
   <div class="container max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-12 relative z-10">
     <div class="space-y-6">
       <div class="flex items-center space-x-4">
         <div class="w-2 h-10 bg-blue-romance-500"></div>
-        <h2 class="text-xl text-blue-romance-300">Estudiante de Ingeniería en TICs</h2>
+        <h2 class="text-xl text-blue-romance-300">
+          {{ heroData().subtitle }}
+        </h2>
       </div>
       
       <h1 class="text-5xl font-bold">
-        Hola, soy <span class="text-blue-romance-500">Kleber Pillasagua Mera</span>
+        {{ heroData().hello }} <span class="text-blue-romance-500">{{ heroData().name }}</span>
       </h1>
       
       <p class="text-xl text-blue-romance-200">
-        Desarrollador Full Stack especializado en tecnologías web modernas. Creando soluciones innovadoras con Angular, Ionic, Nest.js y Laravel.
+        {{ heroData().description }}
       </p>
       
       <div class="flex space-x-4">
         <button 
-          (click)="scrollToSection('projects')"
-        class="bg-blue-romance-600 text-white px-6 py-3 rounded-full hover:bg-blue-romance-700 transition-colors">
-          Ver Proyectos
+          (click)="scrollToSection(heroData().buttons.projects.sectionId)"
+          class="bg-blue-romance-600 text-white px-6 py-3 rounded-full hover:bg-blue-romance-700 transition-colors"
+        >
+          {{ heroData().buttons.projects.text }}
         </button>
-        <button class="border border-blue-romance-500 text-blue-romance-300 px-6 py-3 rounded-full hover:bg-blue-romance-600/20 transition-colors">
-          Descargar CV
+        <button 
+          (click)="downloadCV()"
+          class="border border-blue-romance-500 text-blue-romance-300 px-6 py-3 rounded-full hover:bg-blue-romance-600/20 transition-colors"
+        >
+          {{ heroData().buttons.cv.text }}
         </button>
       </div>
       
       <div class="pt-8">
         <h3 class="text-lg font-semibold mb-4 text-blue-romance-300">Tecnologías</h3>
         <div class="flex flex-wrap gap-3">
-          @for (tech of technologies(); track tech) {
+          @for (tech of heroData().technologies; track tech) {
             <span class="bg-blue-romance-800 text-blue-romance-200 px-3 py-1 rounded-full text-sm">
               {{tech}}
             </span>
@@ -41,8 +47,8 @@
       <div class="w-64 h-64 bg-blue-romance-800 rounded-full flex items-center justify-center relative">
         <div class="w-56 h-56 bg-blue-romance-700 rounded-full overflow-hidden">
           <img 
-          src="assets/img/profile.webp"
-            alt="Foto de perfil" 
+            [src]="heroData().profileImage.src"
+            [alt]="heroData().profileImage.alt" 
             class="w-full h-full object-cover"
           />
         </div>

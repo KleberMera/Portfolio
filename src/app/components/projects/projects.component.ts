@@ -94,7 +94,7 @@ export class ProjectsComponent {
       ],
       currentImageIndex: 0,
       details: {
-        fullDescription: 'Aplicación bancaria desarrollada como proyecto personal utilizando tecnologías modernas de desarrollo web.',
+        fullDescription: 'Aplicación bancaria desarrollada utilizando tecnologías modernas de desarrollo web.',
         challenges: [
           'Implementar funcionalidades bancarias seguras',
           'Crear una arquitectura escalable',

@@ -1,5 +1,26 @@
 import { Component, signal } from '@angular/core';
 
+interface HeroData {
+  subtitle: string;
+  hello: string;
+  name: string;
+  description: string;
+  technologies: string[];
+  buttons: {
+    projects: {
+      text: string;
+      sectionId: string;
+    };
+    cv: {
+      text: string;
+    };
+  };
+  profileImage: {
+    src: string;
+    alt: string;
+  };
+}
+
 @Component({
     selector: 'app-hero',
     imports: [],
@@ -8,19 +29,36 @@ import { Component, signal } from '@angular/core';
 })
 export default class HeroComponent {
   currentActiveSection = signal('hero');
- 
 
-  technologies = signal([
-    'Angular', 
-    'Ionic', 
-    'Nest.js', 
-    'Laravel', 
-    'TypeScript', 
-    'Node.js', 
-    'PostgreSQL', 
-    'Docker'
-  ])
-
+  heroData = signal<HeroData>({
+    subtitle: 'Estudiante de Ingeniería en TICs',
+    hello: 'Hola, soy',
+    name: 'Kleber Pillasagua Mera',
+    description: 'Desarrollador Full Stack especializado en tecnologías web modernas. Creando soluciones innovadoras con Angular, Ionic, Nest.js y Laravel.',
+    technologies: [
+      'Angular', 
+      'Ionic', 
+      'Nest.js', 
+      'Laravel', 
+      'TypeScript', 
+      'Node.js', 
+      'PostgreSQL', 
+      'Docker'
+    ],
+    buttons: {
+      projects: {
+        text: 'Ver Proyectos',
+        sectionId: 'projects'
+      },
+      cv: {
+        text: 'Descargar CV'
+      }
+    },
+    profileImage: {
+      src: 'assets/img/profile.webp',
+      alt: 'Foto de perfil'
+    }
+  });
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
@@ -31,5 +69,10 @@ export default class HeroComponent {
 
   isActiveSection(sectionLink: string): boolean {
     return this.currentActiveSection() === sectionLink;
+  }
+
+  downloadCV() {
+    // Implementar lógica de descarga de CV
+    console.log('Descargar CV');
   }
 }
