@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
+
 interface Project {
   title: string;
   description: string;

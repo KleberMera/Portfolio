@@ -3,23 +3,23 @@
     <div class="flex items-center space-x-4 mb-8">
       <div class="w-2 h-10 bg-blue-romance-500"></div>
       <h2 class="text-3xl font-bold text-blue-romance-300">
-        Habilidades Técnicas
+        {{ skillsData().title }}
       </h2>
     </div>
     
     <div class="grid md:grid-cols-3 gap-6">
-      @for (category of skillCategories; track category) {
-        <div class="bg-blue-romance-950/50 border border-blue-romance-800  rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+      @for (category of skillsData().categories; track category.name) {
+        <div class="bg-blue-romance-950/50 border border-blue-romance-800 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
           <h3 class="text-xl font-semibold text-blue-romance-300 mb-4 border-b border-blue-romance-700 pb-2">
-            {{category.name}}
+            {{ category.name }}
           </h3>
           <div class="space-y-4">
-            @for (skill of category.skills; track skill) {
+            @for (skill of category.skills; track skill.name) {
               <div class="group">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-blue-romance-200 font-medium">{{skill.name}}</span>
+                  <span class="text-blue-romance-200 font-medium">{{ skill.name }}</span>
                   <span class="text-blue-romance-300 text-sm font-bold">
-                    {{skill.level}}%
+                    {{ skill.level }}%
                   </span>
                 </div>
                 <div class="w-full bg-blue-romance-800 rounded-full h-3 overflow-hidden">
