@@ -4,12 +4,12 @@
     <div class="flex items-center space-x-4 mb-8">
       <div class="w-2 h-10 bg-blue-romance-500"></div>
       <h2 class="text-3xl font-bold text-blue-romance-300">
-        Proyectos Desarrollados
+        {{ projectsData().title }}
       </h2>
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      @for (project of projects(); track project.title) {
+      @for (project of projectsData().projects; track project.title) {
         <div class="bg-blue-romance-950/50 border border-blue-romance-800 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
           <div 
             class="relative group mb-4"
@@ -18,7 +18,7 @@
             (touchend)="onTouchEnd($event)"
           >
             <img 
-              [src]="project.images[project.currentImageIndex]" 
+              [src]="project.images[project.currentImageIndex ?? 0]" 
               alt="{{project.title}}" 
               class="w-full h-56 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
             />
