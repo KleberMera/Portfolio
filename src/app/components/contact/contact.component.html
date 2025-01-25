@@ -2,60 +2,62 @@
   <div class="absolute inset-0 z-0"></div>
   
   <div class="container max-w-6xl mx-auto px-4 relative z-10">
-    <div class="flex items-center space-x-4 mb-8">
+    <div class="flex items-center space-x-4 mb-12">
       <div class="w-2 h-10 bg-blue-romance-500"></div>
-      <h2 class="text-3xl font-bold text-blue-romance-300">
+      <h2 class="text-4xl font-bold text-blue-romance-300 tracking-wide">
         Contáctame
       </h2>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-2 gap-12">
       <!-- Contact Information Section -->
-      <div class="bg-blue-romance-950/50 border-blue-romance-800 rounded-xl p-6 shadow-xl border border-blue-romance-700/30">
-        <h3 class="text-xl font-semibold text-blue-romance-300 mb-4 border-b border-blue-romance-700/30 pb-2">
+      <div class="bg-blue-romance-950/50 border-blue-romance-800 rounded-2xl p-8 shadow-xl border border-blue-romance-700/30 transform transition-all duration-300 hover:scale-105 hover:shadow-blue-romance-500/50">
+        <h3 class="text-2xl font-semibold text-blue-romance-300 mb-6 border-b border-blue-romance-700/30 pb-4 flex items-center">
+          <i class="fas fa-address-book mr-4 text-blue-romance-500"></i>
           Información de Contacto
         </h3>
-        <div class="space-y-4 text-blue-romance-200">
-          <div class="flex items-center space-x-3">
-            <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+        <div class="space-y-6 text-blue-romance-200">
+          <div class="flex items-center space-x-4 group">
+            <i class="fab fa-whatsapp text-green-500 text-2xl group-hover:text-green-400 transition-colors"></i>
             <a 
               href="https://wa.me/+593999016890" 
               target="_blank" 
-              class="hover:text-blue-romance-400 transition-colors"
+              class="text-lg hover:text-blue-romance-400 transition-colors group-hover:translate-x-2 transform"
             >
               +593 99 901 6890
             </a>
           </div>
-          <div class="flex items-center space-x-3">
-            <i class="fab fa-facebook text-blue-600 text-xl"></i>
+          <div class="flex items-center space-x-4 group">
+            <i class="fab fa-facebook text-blue-600 text-2xl group-hover:text-blue-500 transition-colors"></i>
             <a 
               href="https://www.facebook.com/kapm15" 
               target="_blank" 
-              class="hover:text-blue-romance-400 transition-colors"
+              class="text-lg hover:text-blue-romance-400 transition-colors group-hover:translate-x-2 transform"
             >
               Facebook Personal
             </a>
           </div>
-          <div class="flex items-center space-x-3">
-            <i class="fas fa-envelope text-blue-romance-400 text-xl"></i>
+          <div class="flex items-center space-x-4 group">
+            <i class="fas fa-envelope text-blue-romance-400 text-2xl group-hover:text-blue-romance-300 transition-colors"></i>
             <a 
               href="mailto:klebermera2024@gmail.com" 
-              class="hover:text-blue-romance-400 transition-colors"
+              class="text-lg hover:text-blue-romance-400 transition-colors group-hover:translate-x-2 transform"
             >
               {{'klebermera2024@gmail.com'}}
             </a>
           </div>
-          <div class="flex items-center space-x-3">
-            <i class="fas fa-phone text-blue-romance-300 text-xl"></i>
-            <span>+593 99 901 6890</span>
+          <div class="flex items-center space-x-4 group">
+            <i class="fas fa-phone text-blue-romance-300 text-2xl group-hover:text-blue-romance-200 transition-colors"></i>
+            <span class="text-lg">+593 99 901 6890</span>
           </div>
         </div>
         
-        <h3 class="text-xl font-semibold text-blue-romance-300 mt-6 mb-4 border-b border-blue-romance-700/30 pb-2">
+        <h3 class="text-2xl font-semibold text-blue-romance-300 mt-6 mb-6 border-b border-blue-romance-700/30 pb-4 flex items-center">
+          <i class="fas fa-briefcase mr-4 text-blue-romance-500"></i>
           Asesorías Disponibles
         </h3>
-        <div class="space-y-4">
-          <div class="bg-blue-romance-950 p-4 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
+        <div class="space-y-6">
+          <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
             <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
               Desarrollo Frontend
             </h4>
@@ -75,7 +77,7 @@
             </div>
           </div>
           
-          <div class="bg-blue-romance-950  p-4 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
+          <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
             <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
               Desarrollo Backend y Infraestructura
             </h4>
@@ -95,7 +97,7 @@
             </div>
           </div>
           
-          <div class="bg-blue-romance-950 p-4 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
+          <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
             <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
               Desarrollo de Aplicaciones
             </h4>
@@ -117,54 +119,45 @@
         </div>
       </div>
       
-      <form [formGroup]="contactForm()" (ngSubmit)="onSubmit()" class="bg-blue-romance-950/50  border-blue-romance-800 rounded-xl p-6 shadow-xl border border-blue-romance-700/30">
-        <div class="space-y-4">
-          <div>
-            <label for="name" class="block text-blue-romance-300 mb-2">Nombre Completo</label>
+      <form [formGroup]="contactForm()" (ngSubmit)="onSubmit()" 
+        class="bg-blue-romance-950/50 border-blue-romance-800 rounded-2xl p-8 shadow-xl border border-blue-romance-700/30 transform transition-all duration-300 hover:scale-105 hover:shadow-blue-romance-500/50 space-y-6">
+        <div class="grid grid-cols-2 gap-6">
+          <div class="col-span-2 md:col-span-1">
+            <label for="name" class="block text-blue-romance-300 mb-2 text-lg">Nombre Completo</label>
             <input 
               type="text" 
               id="name" 
               formControlName="name" 
-              class="w-full bg-blue-romance-800/50 text-blue-romance-200 p-3 rounded-lg border border-blue-romance-700/30 focus:border-blue-romance-500 focus:outline-none"
+              placeholder="Tu nombre completo" 
+              class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
-            <div *ngIf="contactForm().get('name')?.invalid && (contactForm().get('name')?.dirty || contactForm().get('name')?.touched)" class="text-red-500 text-sm mt-1">
-              Nombre es requerido
-            </div>
           </div>
-          
-          <div>
-            <label for="phone" class="block text-blue-romance-300 mb-2">Número de Teléfono</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              formControlName="phone" 
-              class="w-full bg-blue-romance-800/50 text-blue-romance-200 p-3 rounded-lg border border-blue-romance-700/30 focus:border-blue-romance-500 focus:outline-none"
-              placeholder="Ej: +54 11 1234 5678"
-            >
-            <div *ngIf="contactForm().get('phone')?.invalid && (contactForm().get('phone')?.dirty || contactForm().get('phone')?.touched)" class="text-red-500 text-sm mt-1">
-              Ingrese un número de teléfono válido
-            </div>
-          </div>
-          
-          <div>
-            <label for="email" class="block text-blue-romance-300 mb-2">Correo Electrónico</label>
+          <div class="col-span-2 md:col-span-1">
+            <label for="email" class="block text-blue-romance-300 mb-2 text-lg">Correo Electrónico</label>
             <input 
               type="email" 
               id="email" 
               formControlName="email" 
-              class="w-full bg-blue-romance-800/50 text-blue-romance-200 p-3 rounded-lg border border-blue-romance-700/30 focus:border-blue-romance-500 focus:outline-none"
+              placeholder="tu.correo@ejemplo.com" 
+              class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
-            <div *ngIf="contactForm().get('email')?.invalid && (contactForm().get('email')?.dirty || contactForm().get('email')?.touched)" class="text-red-500 text-sm mt-1">
-              Ingrese un correo válido
-            </div>
           </div>
-          
-          <div>
-            <label for="service" class="block text-blue-romance-300 mb-2">Servicio de Interés</label>
+          <div class="col-span-2">
+            <label for="phone" class="block text-blue-romance-300 mb-2 text-lg">Número de Teléfono</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              formControlName="phone" 
+              placeholder="Ej: +54 11 1234 5678" 
+              class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
+            >
+          </div>
+          <div class="col-span-2">
+            <label for="service" class="block text-blue-romance-300 mb-2 text-lg">Servicio de Interés</label>
             <select 
               id="service" 
               formControlName="service" 
-              class="w-full bg-blue-romance-800/50 text-blue-romance-200 p-3 rounded-lg border border-blue-romance-700/30 focus:border-blue-romance-500 focus:outline-none"
+              class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
               <option value="">Seleccione un servicio</option>
               <option value="angular-course">Curso de Angular</option>
@@ -172,27 +165,25 @@
               <option value="project-support">Soporte de Proyecto</option>
             </select>
           </div>
-          
-          <div>
-            <label for="message" class="block text-blue-romance-300 mb-2">Mensaje</label>
+          <div class="col-span-2">
+            <label for="message" class="block text-blue-romance-300 mb-2 text-lg">Mensaje</label>
             <textarea 
               id="message" 
               formControlName="message" 
-              rows="4" 
-              class="w-full bg-blue-romance-800/50 text-blue-romance-200 p-3 rounded-lg border border-blue-romance-700/30 focus:border-blue-romance-500 focus:outline-none"
+              placeholder="Escribe tu mensaje aquí..." 
+              rows="5" 
+              class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all resize-none"
             ></textarea>
-            <div *ngIf="contactForm().get('message')?.invalid && (contactForm().get('message')?.dirty || contactForm().get('message')?.touched)" class="text-red-500 text-sm mt-1">
-              Mensaje es requerido
-            </div>
           </div>
-          
-          <button 
-            type="submit" 
-            [disabled]="contactForm().invalid"
-            class="w-full bg-blue-romance-600 text-white py-3 rounded-lg hover:bg-blue-romance-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Enviar Mensaje
-          </button>
+          <div class="col-span-2">
+            <button 
+              type="submit" 
+              [disabled]="contactForm().invalid"
+              class="w-full bg-blue-romance-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-romance-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-romance-400 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Enviar Mensaje
+            </button>
+          </div>
         </div>
       </form>
     </div>
