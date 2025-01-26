@@ -3,6 +3,7 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
 interface HeaderData {
   logo: string;
   name: string;
+  contact: string;
   menu: MenuItem[];
 }
 interface MenuItem {
@@ -15,12 +16,15 @@ interface MenuItem {
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   mobileMenuOpen = signal(false);
+  private observers: IntersectionObserver[] = [];
   currentActiveSection = signal('hero');
+
   headerData = signal<HeaderData>({
     logo: 'KD',
     name: 'KleberDev',
+    contact: 'Contáctame',
     menu:[
       { label: 'Inicio', link: 'hero' },
       { label: 'Sobre Mí', link: 'about' },
@@ -29,16 +33,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     ]
   });
 
-  private observers: IntersectionObserver[] = [];
-
+  
   ngOnInit() {
    this.setupIntersectionObservers();
-  }
-
-  ngOnDestroy() {
-    console.log('HeaderComponent destroyed');
-    
-    this.observers.forEach(observer => observer.disconnect());
   }
 
   private setupIntersectionObservers() {

@@ -1,0 +1,50 @@
+{
+    "HEADER": {
+      "logo": "KD",
+      "name": "KleberDev",
+      "contact": "Contáctame",
+      "menu": [
+        {
+          "label": "Inicio",
+          "link": "hero"
+        },
+        {
+          "label": "Sobre Mí",
+          "link": "about"
+        },
+        {
+          "label": "Habilidades",
+          "link": "skills"
+        },
+        {
+          "label": "Proyectos",
+          "link": "projects"
+        }
+      ]
+    },
+    "HERO": {
+      "subtitle": "Estudiante de Ingeniería en TICs",
+      "hello": "Hola, soy",
+      "name": "Kleber Pillasagua Mera",
+      "description": "Desarrollador Full Stack especializado en tecnologías web modernas. Creando soluciones innovadoras con Angular, Ionic, Nest.js y Laravel.",
+      "technologies": [
+        "Angular", 
+        "Ionic", 
+        "Nest.js", 
+        "Laravel", 
+        "TypeScript", 
+        "Node.js", 
+        "PostgreSQL", 
+        "Docker"
+      ],
+      "buttons": {
+        "projects": {
+          "text": "Ver Proyectos",
+          "sectionId": "projects"
+        },
+        "cv": {
+          "text": "Descargar CV"
+        }
+      }
+    }
+  }

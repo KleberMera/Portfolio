@@ -7,50 +7,43 @@
           {{ heroData().subtitle }}
         </h2>
       </div>
-      
+
       <h1 class="text-5xl font-bold">
         {{ heroData().hello }} <span class="text-blue-romance-500">{{ heroData().name }}</span>
       </h1>
-      
+
       <p class="text-xl text-blue-romance-200">
         {{ heroData().description }}
       </p>
-      
+
       <div class="flex space-x-4">
-        <button 
-          (click)="scrollToSection(heroData().buttons.projects.sectionId)"
-          class="bg-blue-romance-600 text-white px-6 py-3 rounded-full hover:bg-blue-romance-700 transition-colors"
-        >
+        <button (click)="scrollToSection(heroData().buttons.projects.sectionId)"
+          class="bg-blue-romance-600 text-white px-6 py-3 rounded-full hover:bg-blue-romance-700 transition-colors">
           {{ heroData().buttons.projects.text }}
         </button>
-        <button 
-          (click)="downloadCV()"
-          class="border border-blue-romance-500 text-blue-romance-300 px-6 py-3 rounded-full hover:bg-blue-romance-600/20 transition-colors"
-        >
+        <button (click)="downloadCV()"
+          class="border border-blue-romance-500 text-blue-romance-300 px-6 py-3 rounded-full hover:bg-blue-romance-600/20 transition-colors">
           {{ heroData().buttons.cv.text }}
         </button>
       </div>
-      
+
       <div class="pt-8">
         <h3 class="text-lg font-semibold mb-4 text-blue-romance-300">Tecnologías</h3>
         <div class="flex flex-wrap gap-3">
           @for (tech of heroData().technologies; track tech) {
-            <span class="bg-blue-romance-800 text-blue-romance-200 px-3 py-1 rounded-full text-sm">
-              {{tech}}
-            </span>
+          <span class="bg-blue-romance-800 text-blue-romance-200 px-3 py-1 rounded-full text-sm">
+            {{tech}}
+          </span>
           }
         </div>
       </div>
     </div>
-    
+
     <div class="hidden md:flex justify-center items-center">
       <div class="w-64 h-64 bg-blue-romance-800 rounded-full flex items-center justify-center relative">
         <div class="w-56 h-56 bg-blue-romance-700 rounded-full overflow-hidden">
-          <img 
-            [src]="heroData().profileImage.src"
-            [alt]="heroData().profileImage.alt" 
-            class="w-full h-full object-cover"
-          />
+          <img [src]="heroData().profileImage.src" [alt]="heroData().profileImage.alt"
+            class="w-full h-full object-cover" />
         </div>
       </div>
     </div>
