@@ -17,6 +17,15 @@ interface ServiceOffering {
   technologies: string[];
 }
 
+interface ServiceInterest {
+  title: string;
+  placeholder?: string;
+  options: {
+    value: string;
+    label: string;
+  }[]
+}
+
 interface ContactData {
   title: string;
   subtitle: string;
@@ -24,6 +33,7 @@ interface ContactData {
   contactInfo: ContactInfo[];
   serviceOfferings: ServiceOffering[];
   contactForm: ContactForm;
+  serviceInterests: ServiceInterest;
 }
 
 interface ContactForm {
@@ -101,12 +111,29 @@ export class ContactComponent {
       phone: 'Número de Teléfono',
       email: 'Correo Electrónico',
       message: 'Mensaje',
-      service: 'Servicio de Interés (Opcional)',
       placeholderName: 'Nombre Completo',
       placeholderEmail: 'ejemplo@gmail.com',
       placeholderPhone: 'Ej: +593 99 999 9999',
       placeholderMessage: 'Escribe tu mensaje aquí...',
       submitText: 'Enviar Mensaje'
+    },
+    serviceInterests: {
+      title: 'Servicio de Interés',
+      placeholder: 'Ej: Diseño de Aplicaciones',
+      options: [
+        {
+          value: 'angular-course',
+          label: 'Curso de Angular'
+        },
+        {
+          value: 'angular-consulting',
+          label: 'Asesoría Angular'
+        },
+        {
+          value: 'project-support',
+          label: 'Soporte de Proyecto'
+        }
+      ]
     }
   });
 

@@ -17,7 +17,7 @@
           {{ contactData().subtitle }}
         </h3>
         <div class="space-y-6 text-blue-romance-200">
-          @for (contact of contactData().contactInfo; track contact.text) {
+          @for (contact of contactData().contactInfo; track contact.link) {
             <div class="flex items-center space-x-4 group">
               <i [class]="contact.icon + ' text-2xl group-hover:text-blue-romance-400 transition-colors'" 
                  [ngClass]="{
@@ -96,16 +96,17 @@
             >
           </div>
           <div class="col-span-2">
-            <label for="service" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.service }}</label>
+            <label for="service" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().serviceInterests.title }}</label>
             <select 
               id="service" 
               formControlName="service" 
+             
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
-              <option value="">Seleccione un servicio</option>
-              <option value="angular-course">Curso de Angular</option>
-              <option value="angular-consulting">Asesoría Angular</option>
-              <option value="project-support">Soporte de Proyecto</option>
+              <option selected disabled value="">Seleccione un servicio</option>
+              @for (service of contactData().serviceInterests.options; track service) {
+                <option value="{{ service.value }}">{{ service.label }}</option>
+              }
             </select>
           </div>
           <div class="col-span-2">
