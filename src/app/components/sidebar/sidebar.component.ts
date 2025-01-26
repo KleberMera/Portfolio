@@ -5,7 +5,6 @@ import {
   signal,
   Signal,
   input,
-  Input,
   OnInit,
   OnDestroy
 } from '@angular/core';
@@ -17,7 +16,7 @@ import {
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent implements OnInit, OnDestroy {
-  @Input() menuItems!: Signal<{ label: string, link: string }[]>;
+  readonly menuItems = input<{ label: string; link: string }[]>([]);
   @Output() close = new EventEmitter<void>();
 
   currentActiveSection = signal('hero');

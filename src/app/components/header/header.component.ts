@@ -1,6 +1,14 @@
 import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { SidebarComponent } from "../sidebar/sidebar.component";
-
+interface HeaderData {
+  logo: string;
+  name: string;
+  menu: MenuItem[];
+}
+interface MenuItem {
+  label: string;
+  link: string;
+}
 @Component({
   selector: 'app-header',
   imports: [SidebarComponent],
@@ -10,12 +18,16 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
 export class HeaderComponent implements OnInit, OnDestroy {
   mobileMenuOpen = signal(false);
   currentActiveSection = signal('hero');
-  menuItems = signal([
-    { label: 'Inicio', link: 'hero' },
-    { label: 'Sobre Mí', link: 'about' },
-    { label: 'Habilidades', link: 'skills' },
-    { label: 'Proyectos', link: 'projects' }
-  ]);
+  headerData = signal<HeaderData>({
+    logo: 'KD',
+    name: 'KleberDev',
+    menu:[
+      { label: 'Inicio', link: 'hero' },
+      { label: 'Sobre Mí', link: 'about' },
+      { label: 'Habilidades', link: 'skills' },
+      { label: 'Proyectos', link: 'projects' }
+    ]
+  });
 
   private observers: IntersectionObserver[] = [];
 

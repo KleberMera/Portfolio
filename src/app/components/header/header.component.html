@@ -4,13 +4,13 @@
       (click)="scrollToSection('hero')"
       class="flex items-center space-x-4 cursor-pointer hover:text-blue-romance-500 transition-all duration-300 ease-in-out">
         <div class="w-10 h-10 bg-blue-romance-600 rounded-full flex items-center justify-center">
-          <span class="text-white font-bold">KD</span>
+          <span class="text-white font-bold">{{headerData().logo}}</span>
         </div>
-        <div class="text-xl font-bold tracking-wider">KleberDev</div>
+        <div class="text-xl font-bold tracking-wider">{{headerData().name}}</div>
       </div>
       
       <nav class="hidden md:flex space-x-6 items-center">
-        @for (item of menuItems(); track item.label) {
+        @for (item of headerData().menu; track item.label) {
           <a 
             (click)="scrollToSection(item.link)"
             [class]="isActiveSection(item.link) 
@@ -47,7 +47,7 @@
 
     @if (mobileMenuOpen()) {
       <app-sidebar 
-        [menuItems]="menuItems"
+        [menuItems]="headerData().menu"
         (close)="toggleMobileMenu()"
       ></app-sidebar>
     }
