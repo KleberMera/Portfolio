@@ -5,7 +5,7 @@
     <div class="flex items-center space-x-4 mb-12">
       <div class="w-2 h-10 bg-blue-romance-500"></div>
       <h2 class="text-4xl font-bold text-blue-romance-300 tracking-wide">
-        Contáctame
+        {{ contactData().title }}
       </h2>
     </div>
     
@@ -14,108 +14,51 @@
       <div class="bg-blue-romance-950/50 border-blue-romance-800 rounded-2xl p-8 shadow-xl border border-blue-romance-700/30 transform transition-all duration-300 hover:scale-105 hover:shadow-blue-romance-500/50">
         <h3 class="text-2xl font-semibold text-blue-romance-300 mb-6 border-b border-blue-romance-700/30 pb-4 flex items-center">
           <i class="fas fa-address-book mr-4 text-blue-romance-500"></i>
-          Información de Contacto
+          {{ contactData().subtitle }}
         </h3>
         <div class="space-y-6 text-blue-romance-200">
-          <div class="flex items-center space-x-4 group">
-            <i class="fab fa-whatsapp text-green-500 text-2xl group-hover:text-green-400 transition-colors"></i>
-            <a 
-              href="https://wa.me/+593999016890" 
-              target="_blank" 
-              class="text-lg hover:text-blue-romance-400 transition-colors group-hover:translate-x-2 transform"
-            >
-              +593 99 901 6890
-            </a>
-          </div>
-          <div class="flex items-center space-x-4 group">
-            <i class="fab fa-facebook text-blue-600 text-2xl group-hover:text-blue-500 transition-colors"></i>
-            <a 
-              href="https://www.facebook.com/kapm15" 
-              target="_blank" 
-              class="text-lg hover:text-blue-romance-400 transition-colors group-hover:translate-x-2 transform"
-            >
-              Facebook Personal
-            </a>
-          </div>
-          <div class="flex items-center space-x-4 group">
-            <i class="fas fa-envelope text-blue-romance-400 text-2xl group-hover:text-blue-romance-300 transition-colors"></i>
-            <a 
-              href="mailto:klebermera2024@gmail.com" 
-              class="text-lg hover:text-blue-romance-400 transition-colors group-hover:translate-x-2 transform"
-            >
-              {{'klebermera2024@gmail.com'}}
-            </a>
-          </div>
-          <div class="flex items-center space-x-4 group">
-            <i class="fas fa-phone text-blue-romance-300 text-2xl group-hover:text-blue-romance-200 transition-colors"></i>
-            <span class="text-lg">+593 99 901 6890</span>
-          </div>
+          @for (contact of contactData().contactInfo; track contact.text) {
+            <div class="flex items-center space-x-4 group">
+              <i [class]="contact.icon + ' text-2xl group-hover:text-blue-romance-400 transition-colors'" 
+                 [ngClass]="{
+                   'text-green-500 group-hover:text-green-400': contact.type === 'phone',
+                   'text-blue-600 group-hover:text-blue-500': contact.type === 'social',
+                   'text-blue-romance-400 group-hover:text-blue-romance-300': contact.type === 'email'
+                 }">
+              </i>
+              <a 
+                [href]="contact.link" 
+                [target]="contact.type === 'social' ? '_blank' : '_self'"
+                class="text-lg hover:text-blue-romance-400 transition-colors group-hover:translate-x-2 transform"
+              >
+                {{ contact.text }}
+              </a>
+            </div>
+          }
         </div>
         
         <h3 class="text-2xl font-semibold text-blue-romance-300 mt-6 mb-6 border-b border-blue-romance-700/30 pb-4 flex items-center">
           <i class="fas fa-briefcase mr-4 text-blue-romance-500"></i>
-          Asesorías Disponibles
+          {{ contactData().subject }}
         </h3>
         <div class="space-y-6">
-          <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
-            <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
-              Desarrollo Frontend
-            </h4>
-            <p class="text-blue-romance-200 text-sm">
-              Asesorías personalizadas en desarrollo de aplicaciones con Angular
-            </p>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Arquitectura
-              </span>
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Optimización
-              </span>
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Mejores Prácticas
-              </span>
+          @for (service of contactData().serviceOfferings; track service.title) {
+            <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
+              <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
+                {{ service.title }}
+              </h4>
+              <p class="text-blue-romance-200 mb-3">
+                {{ service.description }}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                @for (tech of service.technologies; track tech) {
+                  <span class="bg-blue-romance-800 text-blue-romance-200 px-2 py-1 rounded-full text-xs">
+                    {{ tech }}
+                  </span>
+                }
+              </div>
             </div>
-          </div>
-          
-          <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
-            <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
-              Desarrollo Backend y Infraestructura
-            </h4>
-            <p class="text-blue-romance-200 text-sm">
-              Asesorías en desarrollo de backends, gestión de servidores y arquitectura de sistemas
-            </p>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Configuración de Servidores
-              </span>
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                APIs
-              </span>
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Infraestructura
-              </span>
-            </div>
-          </div>
-          
-          <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
-            <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
-              Desarrollo de Aplicaciones
-            </h4>
-            <p class="text-blue-romance-200 text-sm">
-              Desarrollo de aplicaciones web y móviles desde cero para tu negocio
-            </p>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Principiantes
-              </span>
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Intermedios
-              </span>
-              <span class="bg-blue-romance-700 text-blue-romance-100 px-2 py-1 rounded-full text-xs">
-                Avanzados
-              </span>
-            </div>
-          </div>
+          }
         </div>
       </div>
       
@@ -123,37 +66,37 @@
         class="bg-blue-romance-950/50 border-blue-romance-800 rounded-2xl p-8 shadow-xl border border-blue-romance-700/30 transform transition-all duration-300 hover:scale-105 hover:shadow-blue-romance-500/50 space-y-6">
         <div class="grid grid-cols-2 gap-6">
           <div class="col-span-2 md:col-span-1">
-            <label for="name" class="block text-blue-romance-300 mb-2 text-lg">Nombre Completo</label>
+            <label for="name" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.name }}</label>
             <input 
               type="text" 
               id="name" 
               formControlName="name" 
-              placeholder="Tu nombre completo" 
+              placeholder="{{ contactData().contactForm.placeholderName }}" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
           </div>
           <div class="col-span-2 md:col-span-1">
-            <label for="email" class="block text-blue-romance-300 mb-2 text-lg">Correo Electrónico</label>
+            <label for="email" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.email }}</label>
             <input 
               type="email" 
               id="email" 
               formControlName="email" 
-              placeholder="tu.correo@ejemplo.com" 
+              placeholder="{{ contactData().contactForm.placeholderEmail }}" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
           </div>
           <div class="col-span-2">
-            <label for="phone" class="block text-blue-romance-300 mb-2 text-lg">Número de Teléfono</label>
+            <label for="phone" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.phone }}</label>
             <input 
               type="tel" 
               id="phone" 
               formControlName="phone" 
-              placeholder="Ej: +54 11 1234 5678" 
+              placeholder="{{ contactData().contactForm.placeholderPhone }}" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
           </div>
           <div class="col-span-2">
-            <label for="service" class="block text-blue-romance-300 mb-2 text-lg">Servicio de Interés</label>
+            <label for="service" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.service }}</label>
             <select 
               id="service" 
               formControlName="service" 
@@ -170,7 +113,7 @@
             <textarea 
               id="message" 
               formControlName="message" 
-              placeholder="Escribe tu mensaje aquí..." 
+              placeholder="{{ contactData().contactForm.placeholderMessage }}" 
               rows="5" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all resize-none"
             ></textarea>
@@ -181,7 +124,7 @@
               [disabled]="contactForm().invalid"
               class="w-full bg-blue-romance-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-romance-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-romance-400 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Enviar Mensaje
+              {{ contactData().contactForm.submitText }}
             </button>
           </div>
         </div>
