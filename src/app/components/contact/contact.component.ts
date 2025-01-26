@@ -118,7 +118,7 @@ export class ContactComponent {
       submitText: 'Enviar Mensaje'
     },
     serviceInterests: {
-      title: 'Servicio de Interés',
+      title: 'Servicio de Interés (Opcional)',
       placeholder: 'Ej: Diseño de Aplicaciones',
       options: [
         {
