@@ -11,15 +11,15 @@
     
     <div class="grid md:grid-cols-2 gap-12">
       <!-- Contact Information Section -->
-      <div class="bg-blue-romance-950/50 border-blue-romance-800 rounded-2xl p-8 shadow-xl border border-blue-romance-700/30 transform transition-all duration-300 hover:scale-105 hover:shadow-blue-romance-500/50">
+      <div class="bg-blue-romance-950/50 border border-blue-romance-800 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:shadow-blue-romance-500/20 hover:scale-[1.02]">
         <h3 class="text-2xl font-semibold text-blue-romance-300 mb-6 border-b border-blue-romance-700/30 pb-4 flex items-center">
-          <i class="fas fa-address-book mr-4 text-blue-romance-500"></i>
+          <i class="fas fa-address-book mr-4 text-blue-romance-500 animate-bounce"></i>
           {{ contactData().subtitle }}
         </h3>
         <div class="space-y-6 text-blue-romance-200">
           @for (contact of contactData().contactInfo; track contact.link) {
             <div class="flex items-center space-x-4 group">
-              <i [class]="contact.icon + ' text-2xl group-hover:text-blue-romance-400 transition-colors'" 
+              <i [class]="contact.icon + ' text-2xl group-hover:text-blue-romance-400 transition-colors animate-pulse'" 
                  [ngClass]="{
                    'text-green-500 group-hover:text-green-400': contact.type === 'phone',
                    'text-blue-600 group-hover:text-blue-500': contact.type === 'social',
@@ -38,12 +38,12 @@
         </div>
         
         <h3 class="text-2xl font-semibold text-blue-romance-300 mt-6 mb-6 border-b border-blue-romance-700/30 pb-4 flex items-center">
-          <i class="fas fa-briefcase mr-4 text-blue-romance-500"></i>
+          <i class="fas fa-briefcase mr-4 text-blue-romance-500 animate-spin"></i>
           {{ contactData().subject }}
         </h3>
         <div class="space-y-6">
           @for (service of contactData().serviceOfferings; track service.title) {
-            <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors">
+            <div class="bg-blue-romance-950 p-6 rounded-lg hover:bg-blue-romance-800/70 transition-colors transform hover:scale-105">
               <h4 class="text-lg font-semibold text-blue-romance-300 mb-2">
                 {{ service.title }}
               </h4>
@@ -52,7 +52,7 @@
               </p>
               <div class="flex flex-wrap gap-2">
                 @for (tech of service.technologies; track tech) {
-                  <span class="bg-blue-romance-800 text-blue-romance-200 px-2 py-1 rounded-full text-xs">
+                  <span class="bg-blue-romance-800 text-blue-romance-200 px-2 py-1 rounded-full text-xs hover:bg-blue-romance-700 transition-colors">
                     {{ tech }}
                   </span>
                 }
@@ -63,7 +63,7 @@
       </div>
       
       <form [formGroup]="contactForm()" (ngSubmit)="onSubmit()" 
-        class="bg-blue-romance-950/50 border-blue-romance-800 rounded-2xl p-8 shadow-xl border border-blue-romance-700/30 transform transition-all duration-300 hover:scale-105 hover:shadow-blue-romance-500/50 space-y-6">
+        class="bg-blue-romance-950/50 border border-blue-romance-800 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:shadow-blue-romance-500/20 hover:scale-[1.02]">
         <div class="grid grid-cols-2 gap-6">
           <div class="col-span-2 md:col-span-1">
             <label for="name" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.name }}</label>
@@ -74,6 +74,9 @@
               placeholder="{{ contactData().contactForm.placeholderName }}" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
+            <div *ngIf="contactForm().get('name')?.invalid && contactForm().get('name')?.touched" class="text-red-500 text-sm mt-1">
+              Por favor, ingresa tu nombre.
+            </div>
           </div>
           <div class="col-span-2 md:col-span-1">
             <label for="email" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.email }}</label>
@@ -84,6 +87,9 @@
               placeholder="{{ contactData().contactForm.placeholderEmail }}" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
+            <div *ngIf="contactForm().get('email')?.invalid && contactForm().get('email')?.touched" class="text-red-500 text-sm mt-1">
+              Por favor, ingresa un correo electrónico válido.
+            </div>
           </div>
           <div class="col-span-2">
             <label for="phone" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().contactForm.phone }}</label>
@@ -94,13 +100,15 @@
               placeholder="{{ contactData().contactForm.placeholderPhone }}" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
+            <div *ngIf="contactForm().get('phone')?.invalid && contactForm().get('phone')?.touched" class="text-red-500 text-sm mt-1">
+              Por favor, ingresa un número de teléfono válido.
+            </div>
           </div>
           <div class="col-span-2">
             <label for="service" class="block text-blue-romance-300 mb-2 text-lg">{{ contactData().serviceInterests.title }}</label>
             <select 
               id="service" 
               formControlName="service" 
-             
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all"
             >
               <option selected disabled value="">Seleccione un servicio</option>
@@ -118,14 +126,20 @@
               rows="5" 
               class="w-full bg-blue-romance-950/50 border border-blue-romance-700 rounded-lg px-4 py-3 text-blue-romance-200 focus:outline-none focus:ring-2 focus:ring-blue-romance-500 transition-all resize-none"
             ></textarea>
+            <div *ngIf="contactForm().get('message')?.invalid && contactForm().get('message')?.touched" class="text-red-500 text-sm mt-1">
+              Por favor, ingresa un mensaje.
+            </div>
           </div>
           <div class="col-span-2">
             <button 
               type="submit" 
               [disabled]="contactForm().invalid"
-              class="w-full bg-blue-romance-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-romance-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-romance-400 disabled:opacity-50 disabled:cursor-not-allowed"
+              class="w-full bg-blue-romance-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-romance-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-romance-400 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              {{ contactData().contactForm.submitText }}
+              <span *ngIf="!sending()">{{ contactData().contactForm.submitText }}</span>
+              <span *ngIf="sending()" class="flex items-center">
+                <i class="fas fa-spinner fa-spin mr-2"></i> Enviando...
+              </span>
             </button>
           </div>
         </div>

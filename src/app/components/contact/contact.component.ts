@@ -58,6 +58,7 @@ interface ContactForm {
 })
 export class ContactComponent {
   private readonly _contactService = inject(ContactService);
+  sending = signal<boolean>(false);
   
   contactData = signal<ContactData>({
     title: 'Contáctame',
