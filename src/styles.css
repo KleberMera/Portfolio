@@ -1,4 +1,24 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilos personalizados para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(15, 23, 42); /* Color oscuro similar al fondo */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(71, 85, 105); /* Color similar al blue-romance-600 */
+  border-radius: 6px;
+  border: 3px solid rgb(15, 23, 42);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 116, 139); /* Color similar al blue-romance-700 */
+}
+
+
