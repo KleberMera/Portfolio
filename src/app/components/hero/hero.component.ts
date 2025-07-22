@@ -72,7 +72,8 @@ export default class HeroComponent {
   }
 
   downloadCV() {
-    // Implementar lógica de descarga de CV
-    console.log('Descargar CV');
+    const cvUrl = 'assets/CVTIKleberPillasaguaMera.pdf';
+    // Solo visualizar en nueva pestaña
+    window.open(cvUrl, '_blank', 'noopener');
   }
 }
