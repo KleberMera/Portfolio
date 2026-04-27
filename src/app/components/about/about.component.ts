@@ -23,7 +23,7 @@ interface AboutData {
 export default class AboutComponent {
     aboutData = signal<AboutData>({
         title: 'Sobre Mí',
-        description: 'Soy un Ingeniero en Tecnologías de la Información especializado en desarrollo full stack. Domino tanto el frontend como el backend, manejando tecnologías como Angular, TypeScript, Java, y múltiples sistemas de bases de datos incluyendo PostgreSQL, MySQL, Oracle y SQL Server. Apasionado por crear soluciones tecnológicas completas y robustas.',
+        description: 'Ingeniero en Tecnologías de la Información especializado en desarrollo full stack con experiencia empresarial en sistemas financieros y de nómina. Actualmente desarrollo soluciones críticas para el GADM La Libertad, implementando arquitecturas backend modernas con pool de conexiones, autenticación Oracle y migración progresiva desde Oracle Forms. Experto en Angular, TypeScript, Java, y gestión de múltiples bases de datos (PostgreSQL, MySQL, Oracle, SQL Server) con enfoque en sistemas de alta disponibilidad y seguridad.',
         sections: [
             {
                 icon: 'fas fa-graduation-cap',
@@ -33,9 +33,9 @@ export default class AboutComponent {
             },
             {
                 icon: 'fas fa-briefcase',
-                title: 'Experiencia',
-                description: 'Ingeniero Full Stack',
-                subDescription: 'Frontend: Angular, TypeScript | Backend: Java, Node.js | Bases de datos: PostgreSQL, MySQL, Oracle, SQL Server'
+                title: 'Experiencia Actual',
+                description: 'Desarrollador de Software - GADM La Libertad',
+                subDescription: 'Especialista en sistemas financieros: roles de pago, asientos contables, migración Oracle Forms → Intranet. Arquitecturas backend enterprise con Oracle, Angular, JWT.'
             }
         ],
         interests: [
