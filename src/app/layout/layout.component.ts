@@ -11,6 +11,7 @@ import { ExperienceComponent } from '../components/experience/experience.compone
 import HeroComponent from '../components/hero/hero.component';
 import { ContactComponent } from '../components/contact/contact.component';
 import { HeaderComponent } from "../components/header/header.component";
+import { CurrentWorkComponent } from '../components/current-work/current-work.component';
 
 @Component({
     selector: 'app-home',
@@ -22,7 +23,8 @@ import { HeaderComponent } from "../components/header/header.component";
     FooterComponent,
     ProjectsComponent,
     ContactComponent,
-    HeaderComponent
+    HeaderComponent,
+    CurrentWorkComponent
 ],
     templateUrl: './layout.component.html',
     styleUrl: './layout.component.scss'

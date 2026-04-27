@@ -1,0 +1,95 @@
+<section class="text-blue-romance-100 py-20">
+  <div class="container max-w-6xl mx-auto px-4">
+    <!-- Título principal -->
+    <div class="flex items-center space-x-4 mb-12">
+      <div class="w-2 h-10 bg-blue-romance-500 rounded-full animate-pulse"></div>
+      <h2 class="text-4xl font-bold text-blue-romance-300">
+        {{ currentWorkData().title }}
+      </h2>
+    </div>
+
+    <!-- Información del cargo actual -->
+    <div class="bg-blue-romance-950/50 border border-blue-romance-800 rounded-2xl p-8 mb-12 shadow-2xl">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold text-blue-romance-300 mb-4">{{ currentWorkData().currentPosition }}</h3>
+          <p class="text-xl text-blue-romance-400 mb-2">{{ currentWorkData().institution }}</p>
+          <p class="text-blue-romance-500 mb-4">{{ currentWorkData().period }}</p>
+        </div>
+        <div>
+          <p class="text-blue-romance-200 leading-relaxed">
+            {{ currentWorkData().description }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyectos Completados -->
+    <div class="mb-16">
+      <div class="flex items-center space-x-4 mb-8">
+        <div class="w-2 h-8 bg-green-500 rounded-full"></div>
+        <h3 class="text-3xl font-bold text-green-400">Proyectos Completados</h3>
+      </div>
+      
+      <div class="grid gap-6">
+        @for (project of currentWorkData().completedProjects; track project.title) {
+          <div class="bg-blue-romance-950/50 border border-green-800/50 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-green-500/20 hover:scale-[1.02]">
+            <h4 class="text-xl font-bold text-blue-romance-300 mb-3">{{ project.title }}</h4>
+            
+            <div class="space-y-3">
+              <div>
+                <h5 class="text-lg font-semibold text-green-400 mb-1">Objetivo:</h5>
+                <p class="text-blue-romance-200">{{ project.objective }}</p>
+              </div>
+              
+              <div>
+                <h5 class="text-lg font-semibold text-green-400 mb-1">Alcance:</h5>
+                <p class="text-blue-romance-200">{{ project.scope }}</p>
+              </div>
+              
+              <div class="pt-2">
+                <span class="inline-block bg-green-600/20 border border-green-500 text-green-300 px-3 py-1 rounded-full text-sm font-medium">
+                  {{ project.status }}
+                </span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Proyectos en Ejecución -->
+    <div>
+      <div class="flex items-center space-x-4 mb-8">
+        <div class="w-2 h-8 bg-yellow-500 rounded-full animate-pulse"></div>
+        <h3 class="text-3xl font-bold text-yellow-400">Proyectos en Ejecución</h3>
+      </div>
+      
+      <div class="grid gap-6">
+        @for (project of currentWorkData().ongoingProjects; track project.title) {
+          <div class="bg-blue-romance-950/50 border border-yellow-800/50 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-yellow-500/20 hover:scale-[1.02]">
+            <h4 class="text-xl font-bold text-blue-romance-300 mb-3">{{ project.title }}</h4>
+            
+            <div class="space-y-3">
+              <div>
+                <h5 class="text-lg font-semibold text-yellow-400 mb-1">Objetivo:</h5>
+                <p class="text-blue-romance-200">{{ project.objective }}</p>
+              </div>
+              
+              <div>
+                <h5 class="text-lg font-semibold text-yellow-400 mb-1">Alcance:</h5>
+                <p class="text-blue-romance-200">{{ project.scope }}</p>
+              </div>
+              
+              <div class="pt-2">
+                <span class="inline-block bg-yellow-600/20 border border-yellow-500 text-yellow-300 px-3 py-1 rounded-full text-sm font-medium">
+                  {{ project.status }}
+                </span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
