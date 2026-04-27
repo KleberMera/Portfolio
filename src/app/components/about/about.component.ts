@@ -23,7 +23,7 @@ interface AboutData {
 export default class AboutComponent {
     aboutData = signal<AboutData>({
         title: 'Sobre Mí',
-        description: 'Soy un Ingeniero en Tecnologías de la Información especializado en desarrollo full stack. Apasionado por crear soluciones tecnológicas innovadoras con sólidas habilidades técnicas y experiencia en proyectos empresariales.',
+        description: 'Soy un Ingeniero en Tecnologías de la Información especializado en desarrollo full stack. Domino tanto el frontend como el backend, manejando tecnologías como Angular, TypeScript, Java, y múltiples sistemas de bases de datos incluyendo PostgreSQL, MySQL, Oracle y SQL Server. Apasionado por crear soluciones tecnológicas completas y robustas.',
         sections: [
             {
                 icon: 'fas fa-graduation-cap',
@@ -34,8 +34,8 @@ export default class AboutComponent {
             {
                 icon: 'fas fa-briefcase',
                 title: 'Experiencia',
-                description: 'Desarrollador Full Stack',
-                subDescription: 'Proyectos web y móviles'
+                description: 'Ingeniero Full Stack',
+                subDescription: 'Frontend: Angular, TypeScript | Backend: Java, Node.js | Bases de datos: PostgreSQL, MySQL, Oracle, SQL Server'
             }
         ],
         interests: [

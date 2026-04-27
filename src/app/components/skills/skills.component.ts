@@ -30,6 +30,7 @@ export class SkillsComponent {
         skills: [
           { name: 'TypeScript', level: 90 },
           { name: 'JavaScript', level: 85 },
+          { name: 'Java', level: 80 },
           { name: 'PHP', level: 75 },
           { name: 'Python', level: 60 }
         ]
@@ -49,7 +50,9 @@ export class SkillsComponent {
           { name: 'Git', level: 85 },
           { name: 'Docker', level: 40 },
           { name: 'MySQL', level: 80 },
+          { name: 'PostgreSQL', level: 75 },
           { name: 'Oracle', level: 75 },
+          { name: 'SQL Server', level: 70 },
           { name: 'Firebase', level: 65 }
         ]
       }
