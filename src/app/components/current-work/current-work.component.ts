@@ -119,16 +119,16 @@ export class CurrentWorkComponent {
     ],
     ongoingProjects: [
       {
-        title: 'Actualización de cuentas y enlaces contables desde Intranet',
-        objective: 'Automatizar actualización de cuentas y enlaces contables',
-        scope: 'Módulo para actualización directa desde Intranet con validaciones de cuentas, auxiliares, períodos y reglas de consistencia.',
-        status: 'En ejecución con avances funcionales implementados'
+        title: 'Desarrollo de módulo para actualización de cuentas y enlaces contables desde Intranet',
+        objective: 'Automatizar desde Intranet la actualización de cuentas y enlaces contables asociados a rubros de nómina, fortaleciendo el control previo a la generación de asientos y reduciendo la dependencia de ajustes manuales.',
+        scope: 'Como continuidad a las mejoras implementadas en la verificación de cuentas y enlaces contables previos a la generación de asientos, actualmente se encuentra en ejecución el desarrollo de un módulo orientado a permitir la actualización de dicha información directamente desde Intranet.\n\nActualmente, si durante la verificación de cuentas y enlaces se detectan inconsistencias o correcciones necesarias, gran parte de los ajustes continúa realizándose manualmente por tratarse de un proceso sensible y con impacto contable.\n\nA partir del seguimiento funcional realizado y la experiencia adquirida, se ha venido desarrollando un flujo controlado para incorporar estas actualizaciones dentro del sistema, contemplando validaciones relacionadas con:\n\n• Cuentas contables y auxiliares\n• Enlaces contables asociados a rubros\n• Validación por período\n• Reglas de consistencia entre rubros y cuentas\n• Controles operativos para actualización segura de información\n\nActualmente el desarrollo ya permite actualizar cierta información asociada a cuentas de rubros, encontrándose en evolución para incorporar validaciones adicionales y completar el flujo integral de actualización contable desde Intranet.',
+        status: 'Proyecto en ejecución con avances funcionales ya implementados para actualización parcial de cuentas asociadas a rubros, encontrándose actualmente en proceso de ampliación del flujo operativo, incorporación de validaciones adicionales y fortalecimiento de controles para completar su integración dentro del sistema Intranet, con enfoque en garantizar consistencia contable, trazabilidad y seguridad en futuras actualizaciones operativas.'
       },
       {
-        title: 'Fortalecimiento del backend institucional',
-        objective: 'Mejorar arquitectura backend para trazabilidad y migración progresiva',
-        scope: 'Pool de conexiones, manejo de contexto de usuario, autenticación integrada Oracle, centralización de roles y permisos, base para migración desde Oracle Forms.',
-        status: 'En ejecución con desarrollo ampliamente avanzado'
+        title: 'Fortalecimiento Backend: Pool de Conexiones y Autenticación Oracle',
+        objective: 'Modernizar arquitectura backend con pool de conexiones, contexto de usuario real y autenticación integrada Oracle para migración progresiva desde Oracle Forms.',
+        scope: 'Arquitectura Actual:\n• Conexiones vía usuario técnico único WEBSERVICES (variables de entorno)\n• Limitación: sin trazabilidad de usuario real autenticado\n\nImplementación en Ejecución:\n\n1. Pool de Conexiones y Contexto de Usuario:\n• Implementación de connection pooling con manejo de contexto\n• Captura y propagación de usuario real autenticado en operaciones DB\n• Integración con triggers Oracle para registro de auditoría\n• Reducción de parámetros usuario en llamadas backend\n\n2. Autenticación Integrada:\n• Prioridad de autenticación mediante usuarios Oracle institucionales\n• Mantenimiento de esquema WEBSERVICES para usuarios específicos\n• Fortalecimiento de seguridad con tokens JWT\n• Unificación de flujos: autenticación + autorización + trazabilidad\n\n3. Gestión Centralizada de Permisos:\n• Administración dinámica de roles y pantallas desde Intranet\n• Validación de accesos basada en permisos DB\n• Prevención de accesos no autorizados por URL directa\n• Migración de validaciones desde frontend a backend\n\n4. Base para Migración Progresiva:\n• Experiencia aplicada: migración exitosa de roles de pago Oracle → Intranet\n• Estructura escalable para futuras migraciones funcionales\n• Control gradual y validado de transición tecnológica',
+        status: 'Fase Avanzada: Implementación funcional completa de pool de conexiones y contexto de usuario. Autenticación Oracle integrada con JWT en pruebas. Módulo de permisos centralizado en desarrollo. Próxima fase: pruebas funcionales y validación de seguridad previo a producción.'
       }
     ]
   });
