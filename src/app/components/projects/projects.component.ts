@@ -46,9 +46,7 @@ export class ProjectsComponent {
         type: 'Web App',
         client: 'Aguapen EP',
         images: [
-          `https://picsum.photos/800/600?random=${Math.random()}`,
-          `https://picsum.photos/800/600?random=${Math.random()}`,
-          `https://picsum.photos/800/600?random=${Math.random()}`
+          'assets/img/554shots_so.png'
         ],
         currentImageIndex: 0,
         details: {
@@ -72,8 +70,7 @@ export class ProjectsComponent {
         type: 'Mobile App',
         client: 'Proyecto Personal',
         images: [
-          `https://picsum.photos/800/600?random=${Math.random()}`,
-          `https://picsum.photos/800/600?random=${Math.random()}`
+          'assets/img/291shots_so.png'
         ],
         currentImageIndex: 0,
         details: {
@@ -97,9 +94,7 @@ export class ProjectsComponent {
         type: 'Fintech App',
         client: 'Empresa',
         images: [
-          `https://picsum.photos/800/600?random=${Math.random()}`,
-          `https://picsum.photos/800/600?random=${Math.random()}`,
-          `https://picsum.photos/800/600?random=${Math.random()}`
+          'assets/img/556shots_so.png'
         ],
         currentImageIndex: 0,
         details: {
