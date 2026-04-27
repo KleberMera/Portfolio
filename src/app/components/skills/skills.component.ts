@@ -49,6 +49,7 @@ export class SkillsComponent {
           { name: 'Git', level: 85 },
           { name: 'Docker', level: 40 },
           { name: 'MySQL', level: 80 },
+          { name: 'Oracle', level: 75 },
           { name: 'Firebase', level: 65 }
         ]
       }

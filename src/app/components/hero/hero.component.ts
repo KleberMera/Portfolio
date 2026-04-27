@@ -31,7 +31,7 @@ export default class HeroComponent {
   currentActiveSection = signal('hero');
 
   heroData = signal<HeroData>({
-    subtitle: 'Estudiante de Ingeniería en TICs',
+    subtitle: 'Ingeniero en Tecnologías de la Información',
     hello: 'Hola, soy',
     name: 'Kleber Pillasagua Mera',
     description: 'Desarrollador Full Stack especializado en tecnologías web modernas. Creando soluciones innovadoras con Angular, Ionic, Nest.js y Laravel.',
@@ -43,6 +43,7 @@ export default class HeroComponent {
       'TypeScript', 
       'Node.js', 
       'PostgreSQL', 
+      'Oracle',
       'Docker'
     ],
     buttons: {

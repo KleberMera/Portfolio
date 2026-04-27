@@ -1,37 +1,37 @@
-<section id="experience" class="experience">
-    <div class="container">
-       <h2 class="section-title">Experiencia Profesional</h2>
+<section id="experience" class="experience text-blue-romance-100 py-20">
+    <div class="container max-w-6xl mx-auto px-4">
+       <div class="flex items-center space-x-4 mb-12">
+          <div class="w-2 h-10 bg-blue-romance-500 rounded-full animate-pulse"></div>
+          <h2 class="text-4xl font-bold text-blue-romance-300">
+             {{ experienceData().title }}
+          </h2>
+       </div>
        <div class="timeline">
-          <!-- Experiencia 1 -->
+          @for (exp of experienceData().experiences; track exp.title) {
           <div class="timeline-item">
              <div class="timeline-icon">
-                <i class="pi pi-briefcase"></i>
+                <i class="pi pi-briefcase text-blue-romance-500"></i>
              </div>
-             <div class="timeline-content">
-                <h3 class="job-title">Cargo 1</h3>
-                <p class="company">Nombre de la Empresa</p>
-                <span class="date">Año de Inicio - Año de Finalización</span>
-                <p class="description">
-                   Descripción breve del rol y responsabilidades desempeñadas en esta posición.
+             <div class="timeline-content bg-blue-romance-950/50 border border-blue-romance-800 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <h3 class="job-title text-2xl font-bold text-blue-romance-300 mb-2">{{ exp.title }}</h3>
+                <p class="company text-xl text-blue-romance-400 mb-2">{{ exp.company }}</p>
+                <span class="date text-blue-romance-500 font-medium mb-4 inline-block">{{ exp.period }}</span>
+                <p class="description text-blue-romance-200 mb-4 leading-relaxed">
+                   {{ exp.description }}
                 </p>
+                <div class="technologies">
+                   <h4 class="text-lg font-semibold text-blue-romance-300 mb-3">Tecnologías:</h4>
+                   <div class="flex flex-wrap gap-2">
+                      @for (tech of exp.technologies; track tech) {
+                      <span class="bg-blue-romance-800 text-blue-romance-200 px-3 py-1 rounded-full text-sm">
+                         {{ tech }}
+                      </span>
+                      }
+                   </div>
+                </div>
              </div>
           </div>
-          <!-- Experiencia 2 -->
-          <div class="timeline-item">
-             <div class="timeline-icon">
-                <i class="pi pi-briefcase"></i>
-             </div>
-             <div class="timeline-content">
-                <h3 class="job-title">Cargo 2</h3>
-                <p class="company">Nombre de la Empresa</p>
-                <span class="date">Año de Inicio - Año de Finalización</span>
-                <p class="description">
-                   Descripción breve del rol y responsabilidades desempeñadas en esta posición.
-                </p>
-             </div>
-          </div>
-          <!-- Añadir más elementos de experiencia según sea necesario -->
+          }
        </div>
     </div>
  </section>
- 

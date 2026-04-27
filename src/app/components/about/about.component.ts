@@ -23,13 +23,13 @@ interface AboutData {
 export default class AboutComponent {
     aboutData = signal<AboutData>({
         title: 'Sobre Mí',
-        description: 'Soy un desarrollador full stack apasionado por crear soluciones tecnológicas innovadoras. Actualmente, me encuentro cursando el último año de Ingeniería en Tecnologías de la Información y Comunicación, preparándome para dar el salto al mundo profesional con sólidas habilidades técnicas.',
+        description: 'Soy un Ingeniero en Tecnologías de la Información especializado en desarrollo full stack. Apasionado por crear soluciones tecnológicas innovadoras con sólidas habilidades técnicas y experiencia en proyectos empresariales.',
         sections: [
             {
                 icon: 'fas fa-graduation-cap',
                 title: 'Educación',
                 description: 'Ingeniería en Tecnologías de la Información y Comunicación',
-                subDescription: 'Último año de carrera - Próximo a graduarme'
+                subDescription: 'Graduado - Ingeniero en TICs'
             },
             {
                 icon: 'fas fa-briefcase',
