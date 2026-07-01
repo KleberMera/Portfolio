@@ -24,7 +24,7 @@ import { CurrentWorkComponent } from '../components/current-work/current-work.co
     ProjectsComponent,
     ContactComponent,
     HeaderComponent,
-    CurrentWorkComponent
+    // CurrentWorkComponent
 ],
     templateUrl: './layout.component.html',
     styleUrl: './layout.component.scss'

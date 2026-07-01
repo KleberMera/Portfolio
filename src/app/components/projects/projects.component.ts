@@ -110,6 +110,78 @@ export class ProjectsComponent {
             'Integración de servicios de autenticación seguros'
           ]
         }
+      },
+      {
+        title: 'Intranet GADM La Libertad',
+        description: 'Sistema de intranet institucional para el GAD Municipal de La Libertad con módulos por área, control de acceso y optimización de procesos internos.',
+        technologies: ['Angular', 'JavaScript', 'HTML', 'CSS', 'Java', 'Oracle PL/SQL', 'Oracle Database'],
+        type: 'Intranet',
+        client: 'GADM Cantón La Libertad',
+        images: [
+          'assets/img/82shots_so.png'
+        ],
+        currentImageIndex: 0,
+        details: {
+          fullDescription: 'Liderazgo en el desarrollo e implementación de la nueva intranet institucional, incluyendo análisis, diseño e implementación de módulos según requerimientos de diferentes áreas del municipio.',
+          challenges: [
+            'Integrar requerimientos de múltiples áreas en una sola plataforma',
+            'Garantizar seguridad, roles y permisos de acceso por perfil',
+            'Optimizar consultas y operaciones críticas sobre base de datos Oracle'
+          ],
+          solutions: [
+            'Desarrollo backend con Java y Oracle PL/SQL (procedimientos, funciones, paquetes y triggers)',
+            'Diseño, administración y optimización de base de datos Oracle para mejorar rendimiento',
+            'Implementación de interfaces frontend responsivas con Angular, JavaScript, HTML y CSS'
+          ]
+        }
+      },
+      {
+        title: 'Ruleta 681',
+        description: 'Aplicación web para registro de participantes y gestión de eventos con ruleta digital para sorteos aleatorios de premios.',
+        technologies: ['Angular', 'JavaScript', 'HTML', 'CSS', 'Backend', 'MySQL'],
+        type: 'Web App',
+        client: 'Campaña 681',
+        images: [
+          'assets/img/681shots_so.png'
+        ],
+        currentImageIndex: 0,
+        details: {
+          fullDescription: 'Desarrollo integral de una plataforma para eventos que permite registrar participantes, administrar información y ejecutar sorteos en tiempo real mediante ruleta digital.',
+          challenges: [
+            'Asegurar aleatoriedad y transparencia en los sorteos',
+            'Gestionar alta concurrencia durante eventos en vivo',
+            'Mantener consistencia de datos de participantes y premios'
+          ],
+          solutions: [
+            'Implementación de lógica de negocio y validaciones de registro',
+            'Desarrollo completo de backend, frontend y base de datos',
+            'Soporte y mantenimiento operativo durante eventos para garantizar continuidad'
+          ]
+        }
+      },
+      {
+        title: 'Fútbol 1',
+        description: 'Plataforma web para gestión de pronósticos deportivos y competencias entre usuarios con ranking y panel administrativo.',
+        technologies: ['Angular', 'JavaScript', 'HTML', 'CSS', 'Backend', 'Oracle', 'MySQL', 'SQL API'],
+        type: 'Sports Platform',
+        client: 'Fútbol 1',
+        images: [
+          'assets/img/201shots_so.png'
+        ],
+        currentImageIndex: 0,
+        details: {
+          fullDescription: 'Plataforma para administrar pronósticos deportivos y competencias, con autenticación, administración de usuarios, partidos y cálculo automático de puntajes y clasificaciones.',
+          challenges: [
+            'Diseñar reglas de puntuación confiables y auditables',
+            'Construir un panel administrativo completo para operación diaria',
+            'Optimizar consultas SQL para tablas de partidos, jornadas y resultados'
+          ],
+          solutions: [
+            'Implementación de módulos de autenticación, registro y administración de usuarios',
+            'Desarrollo de APIs y consultas SQL optimizadas sobre Oracle/MySQL',
+            'Gestión de roles y permisos para asegurar funciones administrativas'
+          ]
+        }
       }
     ]
   });
