@@ -128,6 +128,7 @@ export class ProjectsComponent {
            'assets/img/451shots_so.png',
             'assets/img/306shots_so.png',
         ],
+        accessUrl: 'https://www.lalibertad.gob.ec/intranet/',
         currentImageIndex: 0,
         details: {
           fullDescription: 'Liderazgo en el desarrollo e implementación de la nueva intranet institucional, incluyendo análisis, diseño e implementación de módulos según requerimientos de diferentes áreas del municipio.',
@@ -154,6 +155,7 @@ export class ProjectsComponent {
           'assets/img/211shots_so.png',
           'assets/img/319shots_so.png',
         ],
+        accessUrl: 'https://deluxe-fronted.vercel.app/sorteos-varios',
         currentImageIndex: 0,
         details: {
           fullDescription: 'Desarrollo integral de una plataforma para eventos que permite registrar participantes, administrar información y ejecutar sorteos en tiempo real mediante ruleta digital.',
