@@ -8,6 +8,7 @@ interface Project {
   description: string;
   technologies: string[];
   images: string[];
+  accessUrl?: string;
   type: string;
   client: string;
   details: {
@@ -29,8 +30,8 @@ interface ProjectsData {
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
   host: {
-    '(document:keydown.arrowleft)': 'onKeyLeft($event)',
-    '(document:keydown.arrowright)': 'onKeyRight($event)'
+    '(document:keydown.arrowleft)': 'onKeyLeft()',
+    '(document:keydown.arrowright)': 'onKeyRight()'
   }
 })
 export class ProjectsComponent {
@@ -70,8 +71,10 @@ export class ProjectsComponent {
         type: 'Mobile App',
         client: 'Proyecto Personal',
         images: [
+           'assets/img/711shots_so.png',
           'assets/img/291shots_so.png'
         ],
+        accessUrl: 'https://fin-zen.vercel.app',
         currentImageIndex: 0,
         details: {
           fullDescription: 'Aplicación móvil para gestión de finanzas personales con planes de actualización a tecnologías más modernas.',
@@ -96,6 +99,7 @@ export class ProjectsComponent {
         images: [
           'assets/img/556shots_so.png'
         ],
+        accessUrl: 'https://nuevoamanecer.vercel.app',
         currentImageIndex: 0,
         details: {
           fullDescription: 'Aplicación bancaria desarrollada utilizando tecnologías modernas de desarrollo web.',
@@ -116,9 +120,13 @@ export class ProjectsComponent {
         description: 'Sistema de intranet institucional para el GAD Municipal de La Libertad con módulos por área, control de acceso y optimización de procesos internos.',
         technologies: ['Angular', 'JavaScript', 'HTML', 'CSS', 'Java', 'Oracle PL/SQL', 'Oracle Database'],
         type: 'Intranet',
-        client: 'GADM Cantón La Libertad',
+        client: 'GADM La Libertad',
         images: [
-          'assets/img/82shots_so.png'
+          'assets/img/82shots_so.png',
+          'assets/img/170shots_so.png',
+          'assets/img/545shots_so.png',
+           'assets/img/451shots_so.png',
+            'assets/img/306shots_so.png',
         ],
         currentImageIndex: 0,
         details: {
@@ -136,13 +144,15 @@ export class ProjectsComponent {
         }
       },
       {
-        title: 'Ruleta 681',
+        title: 'Bingo Amigo Deluxe',
         description: 'Aplicación web para registro de participantes y gestión de eventos con ruleta digital para sorteos aleatorios de premios.',
         technologies: ['Angular', 'JavaScript', 'HTML', 'CSS', 'Backend', 'MySQL'],
         type: 'Web App',
-        client: 'Campaña 681',
+        client: 'Pública - Política',
         images: [
-          'assets/img/681shots_so.png'
+          'assets/img/681shots_so.png',
+          'assets/img/211shots_so.png',
+          'assets/img/319shots_so.png',
         ],
         currentImageIndex: 0,
         details: {
@@ -164,9 +174,10 @@ export class ProjectsComponent {
         description: 'Plataforma web para gestión de pronósticos deportivos y competencias entre usuarios con ranking y panel administrativo.',
         technologies: ['Angular', 'JavaScript', 'HTML', 'CSS', 'Backend', 'Oracle', 'MySQL', 'SQL API'],
         type: 'Sports Platform',
-        client: 'Fútbol 1',
+        client: 'Pública - Política',
         images: [
-          'assets/img/201shots_so.png'
+          'assets/img/201shots_so.png',
+          'assets/img/245shots_so.png'
         ],
         currentImageIndex: 0,
         details: {
@@ -217,13 +228,13 @@ export class ProjectsComponent {
     this.startX = 0;
   }
 
-  onKeyLeft(event: KeyboardEvent) {
+  onKeyLeft() {
     if (this.selectedProject()) {
       this.prevImage(this.selectedProject());
     }
   }
 
-  onKeyRight(event: KeyboardEvent) {
+  onKeyRight() {
     if (this.selectedProject()) {
       this.nextImage(this.selectedProject());
     }

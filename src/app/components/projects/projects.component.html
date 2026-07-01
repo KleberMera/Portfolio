@@ -60,7 +60,7 @@
               }
             </div>
 
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center gap-3">
               <button 
                 (click)="openProjectDetails(project)"
                 class="text-blue-romance-300 hover:text-blue-romance-100 transition-colors text-sm flex items-center group"
@@ -70,6 +70,17 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </button>
+
+              @if (project.accessUrl) {
+                <a
+                  [href]="project.accessUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-blue-romance-700 text-blue-romance-100 hover:bg-blue-romance-600 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
+                >
+                  Acceder
+                </a>
+              }
             </div>
           </div>
         </div>
@@ -168,6 +179,19 @@
             </span>
           }
         </div>
+
+        @if (selectedProject().accessUrl) {
+          <div class="pt-2">
+            <a
+              [href]="selectedProject().accessUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center bg-blue-romance-700 text-blue-romance-100 hover:bg-blue-romance-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            >
+              Ir al proyecto
+            </a>
+          </div>
+        }
       </div>
     </div>
   </div>
