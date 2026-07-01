@@ -23,7 +23,7 @@ interface AboutData {
 export default class AboutComponent {
     aboutData = signal<AboutData>({
         title: 'Sobre Mí',
-        description: 'Ingeniero en Tecnologías de la Información especializado en desarrollo full stack con experiencia empresarial en sistemas financieros y de nómina. Actualmente desarrollo soluciones críticas para el GADM La Libertad, implementando arquitecturas backend modernas con pool de conexiones, autenticación Oracle y migración progresiva desde Oracle Forms. Experto en Angular, TypeScript, Java, y gestión de múltiples bases de datos (PostgreSQL, MySQL, Oracle, SQL Server) con enfoque en sistemas de alta disponibilidad y seguridad.',
+        description: 'Ingeniero en Tecnologías de la Información y Desarrollador Full Stack con experiencia en el análisis, diseño, desarrollo e implementación de aplicaciones web y sistemas empresariales. Experiencia en desarrollo backend utilizando Oracle PL/SQL y PHP, y desarrollo frontend con JavaScript, HTML y CSS. Con conocimientos en administración, modelado y optimización de bases de datos Oracle, PostgreSQL y MySQL, así como en la gestión de servidores Linux y Windows para el despliegue y mantenimiento de aplicaciones. Capacidad para desarrollar soluciones orientadas a la automatización de procesos, optimización de consultas SQL, implementación de control de acceso por roles e integración de módulos para sistemas administrativos y financieros.',
         sections: [
             {
                 icon: 'fas fa-graduation-cap',
