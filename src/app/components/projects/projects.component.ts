@@ -179,6 +179,7 @@ export class ProjectsComponent {
           'assets/img/201shots_so.png',
           'assets/img/245shots_so.png'
         ],
+        accessUrl: 'https://www.firmescontamariz.com/futbol1',
         currentImageIndex: 0,
         details: {
           fullDescription: 'Plataforma para administrar pronósticos deportivos y competencias, con autenticación, administración de usuarios, partidos y cálculo automático de puntajes y clasificaciones.',
